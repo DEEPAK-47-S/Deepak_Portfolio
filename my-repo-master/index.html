@@ -292,7 +292,10 @@
 
         .hero-content {
             flex: 1.2;
+            display: flex;
+            flex-direction: column;
         }
+        .mobile-image { display: none; }
         .hero-tag {
             font-family: var(--font-mono);
             font-size: 0.85rem;
@@ -643,6 +646,9 @@
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
+            .desktop-image { display: none !important; }
+            .mobile-image { display: flex; width: 100%; justify-content: center; margin: 1rem 0; }
+            
             .hero { flex-direction: column; text-align: center; gap: 0.5rem; padding: 0.5rem 0; }
             .hero-image { justify-content: center; width: 100%; }
             .hero-btns { justify-content: center; }
@@ -720,26 +726,29 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero" id="about" style="border-top: none; flex-direction: column; text-align: center; gap: 0.5rem;">
-            
-            <div class="hero-tag" style="margin: 0 auto;">Cyber Security & Software Engineering</div>
-            
-            <div class="hero-image" style="width: 100%; justify-content: center;">
-                <div class="profile-card" style="margin: 0 auto;">
-                    <!-- Profile Image pops in late -->
-                    <img src="Image/Deepak.png" alt="S. Deepakumar" class="profile-img">
+        <section class="hero" id="about" style="border-top: none;">
+            <div class="hero-content">
+                <div class="hero-tag" style="align-self: flex-start; margin-bottom: 1rem;">Cyber Security & Software Engineering</div>
+                
+                <div class="hero-image mobile-image">
+                    <div class="profile-card" style="margin: 0 auto;">
+                        <img src="Image/Deepak.png" alt="S. Deepakumar" class="profile-img">
+                    </div>
                 </div>
-            </div>
 
-            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-                <h1 class="hero-title" style="margin-bottom: 0.2rem;">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
-                <p class="hero-desc" style="margin-left: auto; margin-right: auto; margin-bottom: 0.8rem;">Computer Science and Engineering student with hands-on experience in full-stack web development and UI design. Passionate about applying programming and cyber security skills to build robust, scalable applications.</p>
-                <div class="hero-btns" style="justify-content: center; margin-top: 0;">
+                <h1 class="hero-title" style="margin-bottom: 0.5rem;">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
+                <p class="hero-desc" style="margin-bottom: 1.5rem;">Computer Science and Engineering student with hands-on experience in full-stack web development and UI design. Passionate about applying programming and cyber security skills to build robust, scalable applications.</p>
+                <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#certificates" class="btn btn-secondary">My Certificates</a>
                 </div>
             </div>
             
+            <div class="hero-image desktop-image">
+                <div class="profile-card">
+                    <img src="Image/Deepak.png" alt="S. Deepakumar" class="profile-img">
+                </div>
+            </div>
         </section>
 
         <!-- Resume & Skills -->
