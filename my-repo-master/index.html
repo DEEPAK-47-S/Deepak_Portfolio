@@ -296,8 +296,11 @@
         .hero-tag {
             font-family: var(--font-mono);
             font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
             padding: 0.5rem 1.2rem;
             border-radius: 100px;
             display: inline-block;
@@ -494,8 +497,11 @@
             gap: 0.8rem;
         }
         .skill-tag {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--surface-border);
+            background: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
             padding: 0.6rem 1.2rem;
             border-radius: 8px;
             font-size: 0.95rem;
@@ -530,11 +536,14 @@
         .tech-item {
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            background: #18181b;
-            color: #e4e4e7;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #ffffff;
             padding: 0.3rem 0.8rem;
             border-radius: 4px;
-            border: 1px solid #3f3f46;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
         }
 
         /* --- CERTIFICATE GALLERY --- */
@@ -816,7 +825,7 @@
                     <a href="https://connecting-social-problems-web.vercel.app" target="_blank" style="display: block; margin-bottom: 1.5rem;">
                         <img src="Image/project1-placeholder.png" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid var(--surface-border);" onerror="this.src='https://placehold.co/600x400/1a1a24/ef4444?text=Project+Image'">
                     </a>
-                    <h3 class="project-title">Citizen Grievance & Solution Hub</h3>
+                    <h3 class="project-title">Connecting Social Problems</h3>
                     <div class="tech-list">
                         <span class="tech-item">React</span>
                         <span class="tech-item">JavaScript</span>
@@ -855,6 +864,7 @@
                     <p class="project-desc">A role-based examination system featuring question management, an integrated coding editor, submission handling, and local activity logging.</p>
                     <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">View GitHub</a>
                 </div>
+
                 
                 <div class="card reveal" style="transition-delay: 0.4s;">
                     <a href="https://github.com/DEEPAK-47-S" target="_blank" style="display: block; margin-bottom: 1.5rem;">
