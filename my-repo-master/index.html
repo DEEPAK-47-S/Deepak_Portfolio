@@ -362,8 +362,8 @@
             position: relative;
             z-index: 2;
             opacity: 0;
-            /* Pops in 1 second after the intro zoom finishes (3.2s total) */
-            animation: profilePop 0.8s 3.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            /* Pops exactly when hero fades in */
+            animation: profilePop 0.8s 2.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
         @keyframes profilePop {
             0% { transform: scale(0.8); opacity: 0; }
@@ -404,12 +404,10 @@
             transform: translateY(-2px);
         }
 
-        /* --- SCROLL REVEAL ANIMATIONS --- */
+        /* --- SCROLL REVEAL ANIMATIONS (DISABLED FOR IMMEDIATE VISIBILITY) --- */
         .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
+            opacity: 1;
+            transform: translateY(0);
         }
         .reveal.active {
             opacity: 1;
