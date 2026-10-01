@@ -362,8 +362,8 @@
             position: relative;
             z-index: 2;
             opacity: 0;
-            /* Pops exactly when hero fades in */
-            animation: profilePop 0.8s 2.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            /* Pops in 1 second after the intro zoom finishes (3.2s total) */
+            animation: profilePop 0.8s 3.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
         @keyframes profilePop {
             0% { transform: scale(0.8); opacity: 0; }
@@ -404,10 +404,12 @@
             transform: translateY(-2px);
         }
 
-        /* --- SCROLL REVEAL ANIMATIONS (DISABLED FOR IMMEDIATE VISIBILITY) --- */
+        /* --- SCROLL REVEAL ANIMATIONS --- */
         .reveal {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
         .reveal.active {
             opacity: 1;
@@ -718,22 +720,26 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero" id="about" style="border-top: none;">
-            <div class="hero-content">
-                <div class="hero-tag">Cyber Security & Software Engineering</div>
-                <h1 class="hero-title">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
-                <p class="hero-desc">Computer Science and Engineering student with hands-on experience in full-stack web development and UI design. Passionate about applying programming and cyber security skills to build robust, scalable applications.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#certificates" class="btn btn-secondary">My Certificates</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-card">
+        <section class="hero" id="about" style="border-top: none; flex-direction: column; text-align: center; gap: 1.5rem;">
+            
+            <div class="hero-tag" style="margin: 0 auto;">Cyber Security & Software Engineering</div>
+            
+            <div class="hero-image" style="width: 100%; justify-content: center;">
+                <div class="profile-card" style="margin: 0 auto;">
                     <!-- Profile Image pops in late -->
                     <img src="Image/Deepak.png" alt="S. Deepakumar" class="profile-img">
                 </div>
             </div>
+
+            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <h1 class="hero-title" style="margin-bottom: 1rem;">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
+                <p class="hero-desc" style="margin-left: auto; margin-right: auto;">Computer Science and Engineering student with hands-on experience in full-stack web development and UI design. Passionate about applying programming and cyber security skills to build robust, scalable applications.</p>
+                <div class="hero-btns" style="justify-content: center;">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#certificates" class="btn btn-secondary">My Certificates</a>
+                </div>
+            </div>
+            
         </section>
 
         <!-- Resume & Skills -->
