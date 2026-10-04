@@ -765,17 +765,77 @@ h1, h2, h3, .project-title, .edu-title {
     gap: 8px;
 }
 
-/* Mobile Optimized Hero View */
+
+/* Mobile View - Hero Section Optimization */
 @media (max-width: 600px) {
     .hero-container {
         display: flex !important;
         flex-direction: row !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         justify-content: space-between !important;
-        gap: 12px !important;
-        padding: 80px 10px 20px 10px !important;
+        gap: 10px !important;
+        padding: 75px 12px 20px 12px !important;
         text-align: left !important;
     }
+
+    .hero-content {
+        order: 1 !important;
+        flex: 1 1 auto !important;
+        text-align: left !important;
+        min-width: 0 !important;
+    }
+
+    .profile-card-container {
+        order: 2 !important;
+        flex: 0 0 85px !important;
+        width: 85px !important;
+        height: 85px !important;
+        margin: 5px 0 0 5px !important;
+    }
+
+    .profile-card-container img, .profile-card {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.25rem !important;
+        margin-bottom: 6px !important;
+        line-height: 1.25 !important;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 0.75rem !important;
+        margin-bottom: 6px !important;
+        display: inline-block !important;
+    }
+
+    .hero-content .hero-summary {
+        font-size: 0.78rem !important;
+        margin-bottom: 14px !important;
+        line-height: 1.35 !important;
+        color: #cbd5e1 !important;
+        display: block !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    .hero-cta {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    .hero-cta .btn {
+        padding: 6px 10px !important;
+        font-size: 0.72rem !important;
+        text-align: center !important;
+        flex: 1 1 auto !important;
+        white-space: nowrap !important;
+    }
+}
+
 
     .profile-card-container {
         flex: 0 0 110px !important;
