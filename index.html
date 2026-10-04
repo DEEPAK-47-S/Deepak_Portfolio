@@ -643,7 +643,187 @@
                 margin: -150px 0 0 -150px;
             }
         }
-    </style>
+    
+/* Uniform 3.5s Glitch Animation for Titles, Cards, Tags, Badges */
+h1, h2, h3, .project-title, .edu-title {
+    animation: textGlitchLoop 3.5s infinite linear alternate-reverse;
+}
+
+.project-card, .cert-card, .edu-card, .skill-category, .cyber-card {
+    animation: boxGlitchLoop 3.5s infinite ease-in-out alternate-reverse;
+}
+
+.skill-tag, .tech-badge {
+    display: inline-block;
+    animation: badgeGlitchLoop 3.5s infinite linear;
+}
+
+@keyframes textGlitchLoop {
+    0%, 88%, 100% {
+        text-shadow: 0 0 5px rgba(239, 68, 68, 0.6);
+        transform: translate(0, 0);
+    }
+    90% {
+        text-shadow: -2px 0 #ef4444, 2px 0 #00ffff;
+        transform: translate(-1px, 1px);
+    }
+    92% {
+        text-shadow: 2px 0 #ef4444, -2px 0 #00ffff;
+        transform: translate(1px, -1px);
+    }
+    94% {
+        text-shadow: -1px 0 #ef4444, 1px 0 #00ffff;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes boxGlitchLoop {
+    0%, 92%, 100% {
+        border-color: rgba(239, 68, 68, 0.3);
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+    }
+    94% {
+        border-color: rgba(239, 68, 68, 0.8);
+        box-shadow: -3px 0 10px rgba(239, 68, 68, 0.5), 3px 0 10px rgba(0, 255, 255, 0.5);
+    }
+    96% {
+        border-color: rgba(0, 255, 255, 0.8);
+        box-shadow: 3px 0 10px rgba(239, 68, 68, 0.5), -3px 0 10px rgba(0, 255, 255, 0.5);
+    }
+}
+
+@keyframes badgeGlitchLoop {
+    0%, 90%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4));
+    }
+    93% {
+        transform: scale(1.04) skewX(-3deg);
+        filter: drop-shadow(-2px 0 4px #ef4444) drop-shadow(2px 0 4px #00ffff);
+    }
+}
+
+/* Profile Image Pop-up after Intro Animation */
+.profile-card-container {
+    animation: profilePopGlitch 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards;
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+@keyframes profilePopGlitch {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: contrast(200%) hue-rotate(90deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.15) skewX(10deg);
+        filter: drop-shadow(-5px 0 15px #ef4444) drop-shadow(5px 0 15px #00ffff);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(0.95) skewX(-5deg);
+        filter: drop-shadow(3px 0 10px #ef4444);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) skewX(0deg);
+        filter: none;
+    }
+}
+
+/* Project Preview Image Container Styling */
+.project-img-container {
+    width: 100%;
+    height: 180px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px dashed rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-img-placeholder {
+    color: rgba(239, 68, 68, 0.7);
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Optimized Hero View */
+@media (max-width: 600px) {
+    .hero-container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+        padding: 80px 10px 20px 10px !important;
+        text-align: left !important;
+    }
+
+    .profile-card-container {
+        flex: 0 0 110px !important;
+        width: 110px !important;
+        height: 110px !important;
+        margin: 0 !important;
+    }
+
+    .hero-content {
+        flex: 1 !important;
+        text-align: left !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.3rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .hero-content .hero-summary {
+        font-size: 0.75rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.2 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .hero-cta {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+
+    .hero-cta .btn {
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+}
+
+</style>
 </head>
 <body>
 
@@ -652,7 +832,6 @@
         <div class="intro-content-wrapper">
             <div class="intro-glitch-top">SYSTEM OVERRIDE</div>
             <img id="intro-dragon" src="https://cdn.freelogovectors.net/wp-content/uploads/2021/12/kalilogolinux-freelogovectors.net_.png" alt="Kali Logo">
-            <div class="intro-glitch-bottom">ACCESS GRANTED</div>
         </div>
     </div>
 
@@ -673,7 +852,7 @@
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+                
             </ul>
         </nav>
 
@@ -938,39 +1117,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="reveal">
-            <div class="contact-box">
-                <div class="grid-2">
-                    <div>
-                        <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Let's Work Together</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.15rem; font-weight: 300;">I'm currently seeking internship and entry-level opportunities in Cyber Security and Software Development. Feel free to reach out.</p>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="mailto:skdeepakumar000@gmail.com" class="btn btn-primary">Email Me</a>
-                            <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-secondary">GitHub</a>
-                            <a href="https://linkedin.com/in/deepakumar-s" target="_blank" class="btn btn-secondary">LinkedIn</a>
-                        </div>
-                    </div>
-                    <div>
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <label class="form-label">Name</label>
-                                <input type="text" id="name" class="form-input" required placeholder="John Doe">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Email</label>
-                                <input type="email" id="email" class="form-input" required placeholder="john@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Message</label>
-                                <textarea id="message" class="form-input" required placeholder="How can I help you?"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">Send Message</button>
-                            <div id="form-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <footer>
             <p>Designed & Built by S. Deepakumar © 2026</p>
@@ -1025,7 +1172,7 @@
         function drawMatrix() {
             ctx.fillStyle = 'rgba(3, 3, 5, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(0, 255, 0, 0.8)'; // Hacker Green
+            ctx.fillStyle = 'rgba(239, 68, 68, 0.85)'; // Cyber Red
             ctx.font = fontSize + 'px "JetBrains Mono", monospace';
             for (let i = 0; i < drops.length; i++) {
                 const text = letters.charAt(Math.floor(Math.random() * letters.length));
