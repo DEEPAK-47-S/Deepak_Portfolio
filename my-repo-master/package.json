@@ -1,9 +1,0 @@
-{
-  "name": "portfolio-deepakumar",
-  "version": "1.0.0",
-  "description": "Portfolio for S. Deepakumar",
-  "main": "index.html",
-  "dependencies": {
-    "nodemailer": "^6.9.5"
-  }
-}
