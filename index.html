@@ -2160,6 +2160,35 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4) !important;
 }
 
+
+/* =========================================================
+   1-SECOND SMOOTH ENTIRE BLOCK HOVER SYSTEM
+   ========================================================= */
+
+/* Apply 1s smooth transition to entire card blocks */
+.project-card, .cert-card, .edu-card, .skill-category, .cyber-card, .contact-card-wrapper {
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 1s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
+    position: relative !important;
+    will-change: transform, box-shadow !important;
+}
+
+/* 1s Smooth Block Hover Elevation & Cyber Red Ambient Glow */
+.project-card:hover, .cert-card:hover, .edu-card:hover, .skill-category:hover, .cyber-card:hover, .contact-card-wrapper:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(239, 68, 68, 0.8) !important;
+    box-shadow: 0 20px 45px rgba(239, 68, 68, 0.35), 
+                0 0 25px rgba(0, 255, 255, 0.2), 
+                inset 0 1px 6px rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Ensure child text elements inside block do NOT have separate conflicting text hover transforms */
+.project-card *, .cert-card *, .edu-card *, .skill-category * {
+    text-shadow: none;
+}
+
 </style>
 </head>
 <body>
