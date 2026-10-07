@@ -1644,9 +1644,229 @@ body, h1, h2, h3, .project-card, .cert-card, .edu-card, .skill-category, .skill-
     color: #ffffff;
 }
 
+
+/* =========================================================
+   REFINED AUDIO FEEDBACK STYLING & GLASSMORPHISM SYSTEM
+   ========================================================= */
+
+/* Prevent ANY canvas/body page shaking */
+html, body {
+    transform: none !important;
+    animation: none !important;
+    overflow-x: hidden;
+}
+
+/* Kali Dragon High-Visibility Background & Mouse Tracking */
+.kali-dragon-container {
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.85;
+    transition: transform 0.15s ease-out;
+}
+
+.kali-dragon-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.75));
+    animation: aggressiveDragonGlitch 2s infinite ease-in-out alternate-reverse;
+}
+
+/* Aggressive Cyber Glitch for Kali Dragon ONLY */
+@keyframes aggressiveDragonGlitch {
+    0%, 82%, 100% {
+        transform: scale(1) rotate(0deg) skewX(0deg);
+        filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.8)) hue-rotate(0deg);
+    }
+    84% {
+        transform: scale(1.08) translate(-10px, 6px) skewX(-12deg);
+        filter: drop-shadow(-12px 0 30px #ef4444) drop-shadow(12px 0 30px #00ffff) contrast(220%);
+    }
+    86% {
+        transform: scale(0.94) translate(12px, -8px) skewX(14deg);
+        filter: drop-shadow(12px 0 35px #00ffff) drop-shadow(-12px 0 35px #ef4444) invert(25%);
+    }
+    88% {
+        transform: scale(1.05) translate(-6px, -4px) skewX(-8deg);
+        filter: drop-shadow(0 0 35px #ef4444) hue-rotate(120deg);
+    }
+    90% {
+        transform: scale(1) translate(0, 0);
+        filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.8));
+    }
+}
+
+/* Silver Ray Scanner Sweep (Top-to-Bottom pass over Kali Dragon every 3s) */
+.silver-ray-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), #00ffff, transparent);
+    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.9), 0 0 30px 8px rgba(0, 255, 255, 0.7);
+    animation: silverRayScan 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0.9;
+}
+
+@keyframes silverRayScan {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* iPhone 17 Liquid Water Glassmorphism Theme */
+:root {
+    --liquid-glass-bg: rgba(15, 23, 42, 0.42);
+    --liquid-glass-border: rgba(255, 255, 255, 0.18);
+    --liquid-glass-glow: rgba(239, 68, 68, 0.35);
+    --liquid-glass-blur: blur(20px) saturate(210%);
+}
+
+.navbar, .cyber-card, .project-card, .cert-card, .edu-card, .skill-category {
+    background: var(--liquid-glass-bg) !important;
+    backdrop-filter: var(--liquid-glass-blur) !important;
+    -webkit-backdrop-filter: var(--liquid-glass-blur) !important;
+    border: 1px solid var(--liquid-glass-border) !important;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Profile Image Delayed Glitch Pop-up (1 second after intro completes = 3.5s delay) */
+.profile-card-container {
+    animation: profilePopGlitchDelayed 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards !important;
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+@keyframes profilePopGlitchDelayed {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: contrast(220%) hue-rotate(90deg);
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.15) skewX(10deg);
+        filter: drop-shadow(-8px 0 20px #ef4444) drop-shadow(8px 0 20px #00ffff);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(0.95) skewX(-5deg);
+        filter: drop-shadow(4px 0 12px #ef4444);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) skewX(0deg);
+        filter: none;
+    }
+}
+
+/* Scroll To Top Floating Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(239, 68, 68, 0.9);
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.6);
+}
+
+/* Mobile Responsive Hero Height & Layout */
+@media (max-width: 650px) {
+    .kali-dragon-container {
+        width: 320px;
+        height: 320px;
+        right: -20px;
+        opacity: 0.45;
+    }
+
+    .hero-container {
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 70px 12px 20px 12px !important;
+    }
+
+    .hero-content {
+        order: 1 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .profile-card-container {
+        order: 2 !important;
+        flex: 0 0 85px !important;
+        width: 85px !important;
+        height: 85px !important;
+    }
+}
+
 </style>
 </head>
 <body>
+
+    <!-- Kali Dragon Background Wrapper & Silver Ray Scanner -->
+    <div class="kali-dragon-container">
+        <svg class="kali-dragon-svg" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="url(#dragonRedGradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Kali Dragon Vector Shape -->
+                <path d="M 500 150 C 450 120 380 140 350 200 C 320 260 360 320 400 350 C 440 380 480 340 520 380 C 560 420 500 500 450 550 C 400 600 350 580 300 620 C 250 660 280 740 340 760 C 400 780 480 720 520 780 C 560 840 500 900 450 950 M 500 150 C 580 120 680 170 700 250 C 720 330 640 400 600 450 C 560 500 620 580 680 640 C 740 700 780 800 720 880 C 680 940 580 920 520 860 M 350 200 Q 250 150 200 250 T 150 400 M 700 250 Q 800 200 850 300 T 900 450" />
+                <circle cx="480" cy="180" r="12" fill="#ef4444" />
+                <path d="M 450 220 L 400 240 M 550 220 L 600 240 M 420 300 L 360 330 M 580 300 L 640 330" stroke="#ef4444" stroke-width="6"/>
+            </g>
+            <defs>
+                <linearGradient id="dragonRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ef4444" stop-opacity="0.95" />
+                    <stop offset="50%" stop-color="#dc2626" stop-opacity="0.75" />
+                    <stop offset="100%" stop-color="#991b1b" stop-opacity="0.5" />
+                </linearGradient>
+            </defs>
+        </svg>
+        <div class="silver-ray-scanner"></div>
+    </div>
+
 
     <!-- INTRO ANIMATION SCREEN -->
     <div id="intro-screen">
@@ -2168,6 +2388,40 @@ body, h1, h2, h3, .project-card, .cert-card, .edu-card, .skill-category, .skill-
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
+
+<script>
+// Scroll To Top Button Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Kali Dragon Mouse Tracking Effect
+    const dragonContainer = document.querySelector('.kali-dragon-container');
+    if (dragonContainer) {
+        document.addEventListener('mousemove', function(e) {
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 30;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 30;
+            dragonContainer.style.transform = `translate(${moveX}px, calc(-50% + ${moveY}px))`;
+        });
+    }
+});
+</script>
+
 </body>
 
 </html>
