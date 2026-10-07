@@ -1486,6 +1486,164 @@ body, h1, h2, h3, .project-card, .cert-card, .edu-card, .skill-category, .skill-
     }
 }
 
+
+/* =========================================================
+   SYNCHRONIZED 3.5S GLITCH & AGGRESSIVE KALI DRAGON SYSTEM
+   ========================================================= */
+
+/* Police Light Sweep (Red & Blue Flashing Glow) on Text & Cards */
+.section-title, .hero-content h1, .project-title {
+    position: relative;
+    background: linear-gradient(90deg, #ffffff 0%, #ef4444 40%, #00ffff 60%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: policeLightSweep 3.5s infinite linear, syncTextGlitch 3.5s infinite linear;
+}
+
+@keyframes policeLightSweep {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* Synchronized 3.5s Glitch for Boxes & Borders (No full page shake) */
+.project-card, .cert-card, .edu-card, .skill-category, .cyber-card, .profile-card-container {
+    animation: syncBoxGlitch 3.5s infinite linear !important;
+}
+
+@keyframes syncTextGlitch {
+    0%, 88%, 100% {
+        transform: translate(0, 0);
+        text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+    }
+    90% {
+        transform: translate(-3px, 2px);
+        text-shadow: -3px 0 #ef4444, 3px 0 #00ffff;
+    }
+    93% {
+        transform: translate(3px, -2px);
+        text-shadow: 3px 0 #ef4444, -3px 0 #00ffff;
+    }
+    96% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes syncBoxGlitch {
+    0%, 88%, 100% {
+        transform: translate(0, 0);
+        border-color: rgba(239, 68, 68, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    }
+    90% {
+        transform: translate(-4px, 3px);
+        border-color: rgba(239, 68, 68, 0.8);
+        box-shadow: -4px 0 15px rgba(239, 68, 68, 0.6), 4px 0 15px rgba(0, 255, 255, 0.6);
+    }
+    93% {
+        transform: translate(4px, -3px);
+        border-color: rgba(0, 255, 255, 0.8);
+        box-shadow: 4px 0 15px rgba(239, 68, 68, 0.6), -4px 0 15px rgba(0, 255, 255, 0.6);
+    }
+    96% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Aggressive Kali Dragon with Silver Ray Sweep & Fast Movement */
+.hero-dragon-bg, .kali-dragon {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 320px;
+    height: 320px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 1;
+    animation: aggressiveDragonMove 1.5s infinite ease-in-out alternate, dragonSilverRay 3.5s infinite linear;
+}
+
+@keyframes aggressiveDragonMove {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); filter: drop-shadow(0 0 15px #ef4444); }
+    50% { transform: translate(-10px, 8px) scale(1.08) rotate(-3deg); filter: drop-shadow(-5px 0 25px #ef4444) drop-shadow(5px 0 25px #00ffff); }
+    100% { transform: translate(10px, -8px) scale(0.96) rotate(3deg); filter: drop-shadow(5px 0 25px #00ffff) drop-shadow(-5px 0 25px #ef4444); }
+}
+
+@keyframes dragonSilverRay {
+    0%, 75%, 100% {
+        filter: drop-shadow(0 0 15px #ef4444);
+    }
+    85% {
+        filter: drop-shadow(0 0 35px #ffffff) drop-shadow(0 0 20px #ef4444) brightness(180%);
+    }
+}
+
+/* Profile Image Pop-Up 1s After Intro */
+.profile-card-container {
+    animation: profilePopAfterIntro 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 4.5s forwards, syncBoxGlitch 3.5s infinite linear 5.5s !important;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+@keyframes profilePopAfterIntro {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+        filter: contrast(200%) hue-rotate(90deg);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.18) translate(-5px, 3px);
+        filter: drop-shadow(-8px 0 20px #ef4444) drop-shadow(8px 0 20px #00ffff);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(0.92) translate(4px, -2px);
+        filter: drop-shadow(5px 0 15px #ef4444);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+        filter: none;
+    }
+}
+
+/* Floating Back to Top Button Styling */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999;
+}
+
+#scrollTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollTopBtn:hover {
+    transform: translateY(-4px);
+    background: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+    color: #ffffff;
+}
+
 </style>
 </head>
 <body>
@@ -2003,5 +2161,13 @@ body, h1, h2, h3, .project-card, .cert-card, .edu-card, .skill-category, .skill-
             }
         });
     </script>
+
+    <!-- Floating Back to Top / UP Button -->
+    <button id="scrollTopBtn" title="Back to top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 </body>
+
 </html>
