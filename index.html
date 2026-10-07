@@ -2189,6 +2189,47 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     text-shadow: none;
 }
 
+
+/* =========================================================
+   MASTER 1-SECOND ENTIRE BLOCK HOVER SYSTEM FOR ALL 6 PROJECTS
+   ========================================================= */
+
+/* Ensure all 6 project cards & blocks have smooth 1s transition */
+.project-card, .cert-card, .edu-card, .skill-category, .cyber-card {
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 1s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 1s ease, 
+                background-color 1s ease !important;
+    position: relative !important;
+    will-change: transform, box-shadow !important;
+    cursor: pointer !important;
+}
+
+/* Entire Block Elevation & Ambient Glow on Hover */
+.project-card:hover, .cert-card:hover, .edu-card:hover, .skill-category:hover, .cyber-card:hover {
+    transform: translateY(-12px) scale(1.025) !important;
+    border-color: rgba(239, 68, 68, 0.85) !important;
+    box-shadow: 0 22px 55px rgba(239, 68, 68, 0.4), 
+                0 0 30px rgba(0, 255, 255, 0.25), 
+                inset 0 1px 6px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Smooth Image Scale together with block */
+.project-card:hover .project-img-container img {
+    transform: scale(1.06) !important;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Ensure inner tags, badges & text don't block parent container hover */
+.project-card *, .cert-card * {
+    pointer-events: none;
+}
+
+/* Keep links & buttons clickable */
+.project-card a, .project-card button, .cert-card a, .cert-card button {
+    pointer-events: auto !important;
+}
+
 </style>
 </head>
 <body>
