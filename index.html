@@ -1939,6 +1939,102 @@ html, body {
     }
 }
 
+
+/* =========================================================
+   SMOOTH HOVER & TOUCH MICRO-INTERACTION SYSTEM
+   ========================================================= */
+
+/* General Transition Standard */
+a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-badge, .nav-links a, .profile-card-container, .project-img-container img {
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* 1. Navigation Links Hover */
+.nav-links a {
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.12) !important;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+/* 2. Button Hover & Active States */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.04) !important;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.55), 0 0 15px rgba(239, 68, 68, 0.4) !important;
+    border-color: #ef4444 !important;
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+.btn-outline:hover, .btn-secondary:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: #ef4444 !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.04) !important;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35) !important;
+}
+
+.btn-outline:active, .btn-secondary:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+/* 3. Cards Hover Elevation & Liquid Glow (Projects, Certs, Skills, Edu) */
+.project-card:hover, .cert-card:hover, .skill-category:hover, .cyber-card:hover {
+    transform: translateY(-8px) scale(1.015) !important;
+    border-color: rgba(239, 68, 68, 0.65) !important;
+    box-shadow: 0 16px 45px rgba(239, 68, 68, 0.28), 0 0 20px rgba(0, 255, 255, 0.15), inset 0 1px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Project Preview Image Zoom on Hover */
+.project-card:hover .project-img-container img {
+    transform: scale(1.08) !important;
+}
+
+.project-img-container {
+    overflow: hidden !important;
+}
+
+/* 4. Skill Tags & Badges Smooth Micro Hover */
+.skill-tag:hover, .tech-badge:hover {
+    transform: translateY(-3px) scale(1.08) !important;
+    background: rgba(239, 68, 68, 0.25) !important;
+    border-color: rgba(239, 68, 68, 0.8) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* 5. Profile Picture Card Hover */
+.profile-card-container:hover {
+    transform: translateY(-5px) scale(1.04) !important;
+    box-shadow: 0 14px 35px rgba(239, 68, 68, 0.5) !important;
+    border-color: rgba(239, 68, 68, 0.8) !important;
+}
+
+/* 6. Mobile Touch Optimization (@media max-width: 650px) */
+@media (max-width: 650px) {
+    /* Touch active state feedback on mobile */
+    .project-card:active, .cert-card:active, .btn:active {
+        transform: scale(0.98) !important;
+    }
+
+    .project-card:hover, .cert-card:hover {
+        transform: translateY(-3px) !important;
+    }
+}
+
 </style>
 </head>
 <body>
