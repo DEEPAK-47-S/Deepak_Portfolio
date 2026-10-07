@@ -2035,6 +2035,90 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     }
 }
 
+
+/* =========================================================
+   PROJECT CARD IMAGES & HIGH CONTRAST BUTTONS SYSTEM
+   ========================================================= */
+
+.project-img-container {
+    width: 100% !important;
+    height: 200px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    margin-bottom: 18px !important;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+    background: #0f172a !important;
+}
+
+.project-img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    border-radius: 12px !important;
+    display: block !important;
+    transition: transform 0.4s ease !important;
+}
+
+.project-card:hover .project-img-container img {
+    transform: scale(1.06) !important;
+}
+
+.project-img-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    color: rgba(239, 68, 68, 0.8);
+    font-size: 0.88rem;
+    font-family: 'Fira Code', monospace;
+    z-index: 1;
+}
+
+/* Ensure Button Contrast & Hover for GitHub/Live links */
+.project-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 18px !important;
+}
+
+.project-links .btn-primary, .btn-primary {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4) !important;
+}
+
+.project-links .btn-primary:hover, .btn-primary:hover {
+    background: #dc2626 !important;
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.7) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+}
+
+.project-links .btn-outline, .project-links .btn-secondary, .btn-outline, .btn-secondary {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.project-links .btn-outline:hover, .project-links .btn-secondary:hover, .btn-outline:hover, .btn-secondary:hover {
+    background: rgba(239, 68, 68, 0.22) !important;
+    border-color: #ef4444 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+}
+
 </style>
 </head>
 <body>
@@ -2184,11 +2268,11 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                 <!-- Project 1: NIET Student Election -->
                 <div class="project-card cyber-card">
                     <div class="project-img-container">
-                        <img src="Project Images/NIET Student Election Preview.png" alt="NIET Student Election" style="display:block; width:100%; height:100%; object-fit:cover;" />
-                        <div class="project-img-placeholder">
-                            <span>🖼️ NIET Student Election Preview</span>
-                        </div>
+                    <img src="Project Images/NIET Student Election Preview.png" alt="NIET Student Election" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+                    <div class="project-img-placeholder" style="display:none;">
+                        <span>🖼️ NIET Student Election</span>
                     </div>
+                </div>
                     <div class="project-tags">
                         <span class="tech-badge">Python Flask</span>
                         <span class="tech-badge">SQLite</span>
@@ -2205,11 +2289,11 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                 <!-- Project 2: SmartCampus -->
                 <div class="project-card cyber-card">
                     <div class="project-img-container">
-                        <img src="Project Images/SmartCampus Preview.png" alt="SmartCampus" style="display:block; width:100%; height:100%; object-fit:cover;" />
-                        <div class="project-img-placeholder">
-                            <span>🖼️ SmartCampus Preview</span>
-                        </div>
+                    <img src="Project Images/SmartCampus Preview.png" alt="SmartCampus" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+                    <div class="project-img-placeholder" style="display:none;">
+                        <span>🖼️ SmartCampus</span>
                     </div>
+                </div>
                     <div class="project-tags">
                         <span class="tech-badge">Web Application</span>
                         <span class="tech-badge">Role-Based Access</span>
@@ -2226,11 +2310,11 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                 <!-- Project 3: Connecting Social Problems -->
                 <div class="project-card cyber-card">
                     <div class="project-img-container">
-                        <img src="Project Images/Connecting Social Problems.png" alt="Connecting Social Problems" style="display:block; width:100%; height:100%; object-fit:cover;" />
-                        <div class="project-img-placeholder">
-                            <span>🖼️ Citizen Grievance Hub Preview</span>
-                        </div>
+                    <img src="Project Images/Connecting Social Problems.png" alt="Connecting Social Problems" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+                    <div class="project-img-placeholder" style="display:none;">
+                        <span>🖼️ Connecting Social Problems</span>
                     </div>
+                </div>
                     <div class="project-tags">
                         <span class="tech-badge">React</span>
                         <span class="tech-badge">PostgreSQL/Supabase</span>
@@ -2247,11 +2331,11 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                 <!-- Project 4: TVK CBE North Ward 19 -->
                 <div class="project-card cyber-card">
                     <div class="project-img-container">
-                        <img src="Project Images/TVK Ward 19 Portal Preview.png" alt="TVK CBE Ward 19" style="display:block; width:100%; height:100%; object-fit:cover;" />
-                        <div class="project-img-placeholder">
-                            <span>🖼️ TVK Ward 19 Portal Preview</span>
-                        </div>
+                    <img src="Project Images/TVK Ward 19 Portal Preview.png" alt="TVK CBE Ward 19" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+                    <div class="project-img-placeholder" style="display:none;">
+                        <span>🖼️ TVK CBE Ward 19</span>
                     </div>
+                </div>
                     <div class="project-tags">
                         <span class="tech-badge">Python Flask</span>
                         <span class="tech-badge">Supabase/PostgreSQL</span>
@@ -2268,11 +2352,11 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                 <!-- Project 5: Offline Exam Portal -->
                 <div class="project-card cyber-card">
                     <div class="project-img-container">
-                        <img src="Project Images/Offline Exam Portal Preview.png" alt="Offline Exam Portal" style="display:block; width:100%; height:100%; object-fit:cover;" />
-                        <div class="project-img-placeholder">
-                            <span>🖼️ Offline Exam Portal Preview</span>
-                        </div>
+                    <img src="Project Images/Offline Exam Portal Preview.png" alt="Offline Exam Portal" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+                    <div class="project-img-placeholder" style="display:none;">
+                        <span>🖼️ Offline Exam Portal</span>
                     </div>
+                </div>
                     <div class="project-tags">
                         <span class="tech-badge">Python Flask</span>
                         <span class="tech-badge">SQLite</span>
