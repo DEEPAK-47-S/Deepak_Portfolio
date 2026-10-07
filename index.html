@@ -2230,6 +2230,42 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     pointer-events: auto !important;
 }
 
+
+/* =========================================================
+   UNIVERSAL SMOOTH CONTAINER HOVER FOR EACH & EVERY PROJECT
+   ========================================================= */
+
+/* Target every direct child container inside .projects-grid explicitly */
+.projects-grid > * {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.8s ease, 
+                background 0.8s ease !important;
+    position: relative !important;
+    cursor: pointer !important;
+    will-change: transform, box-shadow !important;
+}
+
+/* Apply smooth hover container elevation to EACH and EVERY project card */
+.projects-grid > *:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    border-color: rgba(239, 68, 68, 0.85) !important;
+    box-shadow: 0 22px 50px rgba(239, 68, 68, 0.38), 
+                0 0 25px rgba(0, 255, 255, 0.22), 
+                inset 0 1px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Ensure inner elements do not trap or interrupt pointer events for container hover */
+.projects-grid > * * {
+    pointer-events: none;
+}
+
+/* Explicitly allow clickable action links & buttons inside project containers */
+.projects-grid > * a, 
+.projects-grid > * button {
+    pointer-events: auto !important;
+}
+
 </style>
 </head>
 <body>
