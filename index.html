@@ -2397,6 +2397,47 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     box-shadow: 0 20px 45px rgba(239, 68, 68, 0.38), 0 0 25px rgba(0, 255, 255, 0.22) !important;
 }
 
+
+/* =========================================================
+   PROFILE IMAGE INITIAL GLITCH POP-UP ANIMATION SYSTEM
+   ========================================================= */
+
+/* Profile Picture Container Initial State & Glitch Pop Trigger */
+.profile-card-container {
+    opacity: 0;
+    transform: scale(0.3);
+    animation: profileGlitchPopIntro 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards !important;
+}
+
+/* Keyframes: Starts inside strong Red/Cyan Glitch & Skew, then smoothly settles */
+@keyframes profileGlitchPopIntro {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) skewX(25deg) translate(-25px, 12px);
+        filter: drop-shadow(-18px 0 30px #ef4444) drop-shadow(18px 0 30px #00ffff) contrast(260%) hue-rotate(90deg);
+    }
+    20% {
+        opacity: 0.6;
+        transform: scale(0.55) skewX(-18deg) translate(18px, -10px);
+        filter: drop-shadow(18px 0 35px #00ffff) drop-shadow(-18px 0 35px #ef4444) invert(35%);
+    }
+    45% {
+        opacity: 0.88;
+        transform: scale(1.18) skewX(12deg) translate(-8px, 5px);
+        filter: drop-shadow(-12px 0 25px #ef4444) drop-shadow(12px 0 25px #00ffff) contrast(200%);
+    }
+    70% {
+        opacity: 0.98;
+        transform: scale(0.94) skewX(-5deg) translate(3px, -2px);
+        filter: drop-shadow(6px 0 15px #ef4444);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) skewX(0deg) translate(0, 0);
+        filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
+    }
+}
+
 </style>
 </head>
 <body>
