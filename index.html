@@ -968,6 +968,94 @@ h1, h2, h3, .project-title, .edu-title {
     }
 }
 
+
+/* =========================================================
+   LIQUID WATER GLASSMORPHISM SYSTEM
+   ========================================================= */
+
+:root {
+    --glass-bg: rgba(15, 23, 42, 0.38);
+    --glass-border: rgba(239, 68, 68, 0.28);
+    --glass-highlight: rgba(255, 255, 255, 0.12);
+    --glass-glow: rgba(239, 68, 68, 0.25);
+    --glass-blur: blur(18px) saturate(190%);
+}
+
+/* Translucent Glass Navbar */
+.navbar {
+    background: rgba(10, 15, 30, 0.45) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 1px var(--glass-highlight) !important;
+}
+
+/* Glass Cards & Containers */
+.cyber-card, .project-card, .cert-card, .edu-card, .skill-category, .profile-card-container {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 2px var(--glass-highlight) !important;
+    border-radius: 16px !important;
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, border-color 0.35s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Liquid Water Gloss Reflection Effect */
+.cyber-card::before, .project-card::before, .cert-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 40%,
+        rgba(239, 68, 68, 0.08) 60%,
+        rgba(0, 255, 255, 0.05) 100%
+    );
+    transform: rotate(30deg);
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    opacity: 0.6;
+}
+
+.project-card:hover, .cert-card:hover, .cyber-card:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+    border-color: rgba(239, 68, 68, 0.65) !important;
+    box-shadow: 0 12px 40px rgba(239, 68, 68, 0.25), inset 0 1px 4px rgba(255, 255, 255, 0.25) !important;
+}
+
+.project-img-container {
+    background: rgba(10, 15, 30, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px dashed rgba(239, 68, 68, 0.35) !important;
+}
+
+/* 3-Column Grid for Desktop (PC) & 1-Column Grid for Mobile */
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}
+
 </style>
 </head>
 <body>
