@@ -1843,6 +1843,98 @@ html, body {
     }
 }
 
+
+/* =========================================================
+   SINGLE KALI DRAGON - FAST CYBER GLITCH & CLEAN SCANNER
+   ========================================================= */
+
+.kali-dragon-container {
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 580px;
+    height: 580px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.85;
+    transition: transform 0.08s ease-out;
+}
+
+.kali-dragon-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 22px rgba(239, 68, 68, 0.85));
+    animation: fastDragonGlitch 1.1s infinite linear alternate-reverse !important;
+}
+
+/* Fast & Responsive Glitch Keyframes for Kali Dragon */
+@keyframes fastDragonGlitch {
+    0%, 75%, 100% {
+        transform: scale(1) translate(0, 0) rotate(0deg) skewX(0deg);
+        filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.85)) hue-rotate(0deg);
+    }
+    77% {
+        transform: scale(1.1) translate(-14px, 8px) skewX(-14deg);
+        filter: drop-shadow(-15px 0 35px #ef4444) drop-shadow(15px 0 35px #00ffff) contrast(240%);
+    }
+    80% {
+        transform: scale(0.92) translate(16px, -10px) skewX(16deg);
+        filter: drop-shadow(15px 0 40px #00ffff) drop-shadow(-15px 0 40px #ef4444) invert(30%);
+    }
+    83% {
+        transform: scale(1.06) translate(-8px, -6px) skewX(-10deg);
+        filter: drop-shadow(0 0 40px #ef4444) hue-rotate(140deg);
+    }
+    86% {
+        transform: scale(1.02) translate(6px, 4px) skewX(6deg);
+        filter: drop-shadow(-8px 0 25px #ef4444) drop-shadow(8px 0 25px #00ffff);
+    }
+    88% {
+        transform: scale(1) translate(0, 0);
+        filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.85));
+    }
+}
+
+/* Clean Scanline Beam (No secondary dragon image, strictly a laser beam scan) */
+.silver-ray-scanner {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), #00ffff, transparent);
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.95), 0 0 30px 6px rgba(0, 255, 255, 0.8);
+    animation: fastSilverScan 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0.9;
+}
+
+@keyframes fastSilverScan {
+    0% {
+        top: -5%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 105%;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .kali-dragon-container {
+        width: 320px;
+        height: 320px;
+        right: -15px;
+        opacity: 0.5;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -2410,14 +2502,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Kali Dragon Mouse Tracking Effect
+    
+    // Fast & Responsive Kali Dragon Mouse Tracking
     const dragonContainer = document.querySelector('.kali-dragon-container');
     if (dragonContainer) {
         document.addEventListener('mousemove', function(e) {
-            const moveX = (e.clientX / window.innerWidth - 0.5) * 30;
-            const moveY = (e.clientY / window.innerHeight - 0.5) * 30;
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 45;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 45;
             dragonContainer.style.transform = `translate(${moveX}px, calc(-50% + ${moveY}px))`;
         });
+    }
+});
     }
 });
 </script>
