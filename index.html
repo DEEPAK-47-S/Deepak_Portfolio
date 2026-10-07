@@ -194,7 +194,7 @@
             object-fit: contain;
             opacity: 0.85; 
             /* Metallic shining red effect + Glitch animation */
-            animation: dragonGlitchLoop 5s infinite;
+            animation: dragonGlitchLoop 3.5s infinite;
         }
 
         @keyframes dragonGlitchLoop {
@@ -319,13 +319,13 @@
             max-width: 380px;
             aspect-ratio: 1;
             border-radius: var(--radius-lg);
-            background: var(--surface);
+            background: transparent;
             border: 2px solid var(--surface-border);
             padding: 1.5rem;
             box-shadow: 0 30px 60px rgba(0,0,0,0.6);
             position: relative;
             overflow: hidden;
-            animation: borderGlitch 5s infinite;
+            animation: borderGlitch 3.5s infinite;
         }
 
         @keyframes borderGlitch {
@@ -2118,63 +2118,63 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
     box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4) !important;
     transform: translateY(-2px) scale(1.03) !important;
 }
-.project-block-1{
+#project-block-1{
     transition: all 1s ease;
 }
-.project-block-2{
+#project-block-2{
     transition: all 1s ease;
 }
-.project-block-3{
+#project-block-3{
     transition: all 1s ease;
 }
-.project-block-4{
+#project-block-4{
     transition: all 1s ease;
 }
-.project-block-5{
+#project-block-5{
     transition: all 1s ease;
 }
-.project-block-6{
+#project-block-6{
     transition: all 1s ease;
 }
-.project-block-1:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-1:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
 }
-.project-block-2:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-2:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
 }
 
-.project-block-3:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-3:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
 }
 
-.project-block-4:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-4:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
 }
 
-.project-block-5:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-5:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 1s ease, 
+                background 1s ease !important;
 }
 
-.project-block-6:hover{
-    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.45s ease, 
-                background 0.45s ease !important;
+#project-block-6:hover{
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 15s ease, 
+                background 1s ease !important;
 }
 
 
@@ -2435,6 +2435,58 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
         opacity: 1;
         transform: scale(1) skewX(0deg) translate(0, 0);
         filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
+    }
+}
+
+
+/* =========================================================
+   LIGHT CYBER SHAKE SYSTEM FOR DRAGON & PROFILE IMAGE BOX
+   ========================================================= */
+
+/* Kali Dragon & Header Dragon Logo Light Shake */
+.kali-dragon-svg, .hero-dragon-bg, .intro-logo img, svg.dragon-logo {
+    animation: lightDragonShakeGlitch 3.5s infinite linear alternate-reverse !important;
+}
+
+@keyframes lightDragonShakeGlitch {
+    0%, 88%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.7));
+    }
+    90% {
+        transform: translate(-3px, 2px) scale(1.02) rotate(-0.5deg);
+        filter: drop-shadow(-4px 0 12px #ef4444) drop-shadow(4px 0 12px #00ffff);
+    }
+    93% {
+        transform: translate(3px, -2px) scale(0.99) rotate(0.5deg);
+        filter: drop-shadow(4px 0 14px #00ffff) drop-shadow(-4px 0 14px #ef4444);
+    }
+    96% {
+        transform: translate(-1px, 1px) scale(1);
+    }
+}
+
+/* Profile Picture Image Box Light Shake */
+.profile-card-container {
+    animation: profileGlitchPopIntro 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards,
+               lightProfileShakeGlitch 4s infinite linear 5s !important;
+}
+
+@keyframes lightProfileShakeGlitch {
+    0%, 90%, 100% {
+        transform: translate(0, 0) scale(1);
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    }
+    92% {
+        transform: translate(-2px, 1.5px) scale(1.015);
+        box-shadow: -3px 0 15px rgba(239, 68, 68, 0.7), 3px 0 15px rgba(0, 255, 255, 0.6);
+    }
+    95% {
+        transform: translate(2px, -1.5px) scale(0.99);
+        box-shadow: 3px 0 15px rgba(239, 68, 68, 0.7), -3px 0 15px rgba(0, 255, 255, 0.6);
+    }
+    97% {
+        transform: translate(-1px, 0.5px);
     }
 }
 
@@ -2809,7 +2861,7 @@ a, button, .btn, .project-card, .cert-card, .skill-category, .skill-tag, .tech-b
                     </a>
 
                     <!-- Instagram Button -->
-                    <a href="https://www.instagram.com/itz_deepak._.47/?__pwa=1#" target="_blank" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.95rem;">
+                    <a href="https://www.instagram.com/itz_deepak._.47" target="_blank" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.95rem;">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         Instagram Profile
                     </a>
