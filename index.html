@@ -883,6 +883,91 @@ h1, h2, h3, .project-title, .edu-title {
     }
 }
 
+
+/* Mobile View - Hero Section & Layout Optimization */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 16px !important;
+    }
+
+    .nav-links {
+        gap: 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .hero-container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        padding: 75px 12px 20px 12px !important;
+        text-align: left !important;
+    }
+
+    .hero-content {
+        order: 1 !important;
+        flex: 1 1 auto !important;
+        text-align: left !important;
+        min-width: 0 !important;
+    }
+
+    .profile-card-container {
+        order: 2 !important;
+        flex: 0 0 85px !important;
+        width: 85px !important;
+        height: 85px !important;
+        margin: 5px 0 0 5px !important;
+    }
+
+    .profile-card-container img, .profile-card {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.25rem !important;
+        margin-bottom: 6px !important;
+        line-height: 1.25 !important;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 0.75rem !important;
+        margin-bottom: 6px !important;
+        display: inline-block !important;
+    }
+
+    .hero-content .hero-summary {
+        font-size: 0.78rem !important;
+        margin-bottom: 14px !important;
+        line-height: 1.35 !important;
+        color: #cbd5e1 !important;
+        display: block !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    .hero-cta {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    .hero-cta .btn {
+        padding: 6px 10px !important;
+        font-size: 0.72rem !important;
+        text-align: center !important;
+        flex: 1 1 auto !important;
+        white-space: nowrap !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -909,7 +994,7 @@ h1, h2, h3, .project-title, .edu-title {
             <a href="#" class="logo">S<span style="color: red;margin-left: 10px;">DEEPAKUMAR</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
+                <li><a href="S_DEEPAKUMAR Resume.pdf" target="_blank">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 
@@ -1017,99 +1102,139 @@ h1, h2, h3, .project-title, .edu-title {
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="reveal">
+        <section id="projects" class="section">
+        <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Real-world web applications & technical projects</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world applications, full-stack systems, and academic work</p>
             </div>
-            
-            <div class="grid-2">
-                <div class="card reveal" style="transition-delay: 0.1s;">
+            <div class="projects-grid">
+                <!-- Project 1: NIET Student Election -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="NIET Student Election" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ NIET Student Election Preview</span>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python Flask</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">HTML/CSS/JS</span>
+                    </div>
                     <h3 class="project-title">NIET Student Election – Online Voting System</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Python Flask</span>
-                        <span class="tech-item">SQLite</span>
-                        <span class="tech-item">HTML/CSS/JS</span>
-                    </div>
-                    <p class="project-desc">• Developed a web-based student election system with separate voter and administrator workflows.<br>• Implemented voter registration, one-voter-one-vote validation, duplicate vote prevention, candidate management, and election result views.<br>• Added candidate photo upload, live result refresh, vote percentage display, and CSV result export.</p>
-                    <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
-                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">GitHub Repository</a>
+                    <p class="project-desc">Web-based student election system with separate voter and admin workflows, 1-voter-1-vote validation, duplicate vote prevention, candidate management, photo uploads, live result refresh, vote percentage display, and CSV exports.</p>
+                    <div class="project-links">
+                        <a href="https://deepakumar.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-primary">View Live App</a>
+                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
                 </div>
 
-                <div class="card reveal" style="transition-delay: 0.2s;">
+                <!-- Project 2: SmartCampus -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="SmartCampus" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ SmartCampus Preview</span>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Web Application</span>
+                        <span class="tech-badge">Role-Based Access</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
                     <h3 class="project-title">SmartCampus – Campus Management & ERP Platform</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Web Application</span>
-                        <span class="tech-item">Role-Based Access</span>
-                        <span class="tech-item">ERP Platform</span>
+                    <p class="project-desc">Unified campus management platform with role-based access for admins, students, faculty, HODs, mentors, and placement staff. Centralized interface for managing college activities and authentication flows.</p>
+                    <div class="project-links">
+                        <a href="https://smart-campus-for-colleges.vercel.app/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
-                    <p class="project-desc">• Built a unified campus management platform with role-based access for administrators, students, faculty, HODs, mentors, and placement staff.<br>• Designed a centralized interface for managing college activities through separate user roles and authentication flows.</p>
                 </div>
 
-                <div class="card reveal" style="transition-delay: 0.3s;">
-                    <h3 class="project-title">Smart Exam Portal for Students</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Web Application</span>
-                        <span class="tech-item">Exam Portal</span>
-                        <span class="tech-item">Academic Assessment</span>
+                <!-- Project 3: Connecting Social Problems -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="Connecting Social Problems" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ Citizen Grievance Hub Preview</span>
+                        </div>
                     </div>
-                    <p class="project-desc">• Developed a student-focused examination portal to organize online assessment activities in a single web interface.<br>• Structured the application around student examination workflows and academic assessment access.</p>
-                    <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; margin-top: 1rem;">GitHub Repository</a>
+                    <div class="project-tags">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">PostgreSQL/Supabase</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
+                    <h3 class="project-title">Connecting Social Problems – Citizen Grievance Hub</h3>
+                    <p class="project-desc">Web platform for users to submit and explore local community problems (roads, water, sanitation, environment, public safety) with structured digital reporting and category filtering.</p>
+                    <div class="project-links">
+                        <a href="https://connecting-social-problems-web.vercel.app/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+                    </div>
                 </div>
 
-                <div class="card reveal" style="transition-delay: 0.4s;">
-                    <h3 class="project-title">Connecting Social Problem – Citizen Grievance & Solution Hub</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">React</span>
-                        <span class="tech-item">JavaScript</span>
-                        <span class="tech-item">HTML/CSS</span>
-                        <span class="tech-item">PostgreSQL/Supabase</span>
-                        <span class="tech-item">Vercel</span>
+                <!-- Project 4: TVK CBE North Ward 19 -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="TVK CBE Ward 19" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ TVK Ward 19 Portal Preview</span>
+                        </div>
                     </div>
-                    <p class="project-desc">• Developed a platform for users to submit and explore local community problems through structured digital reporting.<br>• Organized reported problems into roads, water, sanitation, agriculture, environment, and public safety categories.</p>
-                    <a href="https://connecting-social-problems-web.vercel.app" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; margin-top: 1rem;">Live Demo</a>
-                </div>
-
-                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <div class="project-tags">
+                        <span class="tech-badge">Python Flask</span>
+                        <span class="tech-badge">Supabase/PostgreSQL</span>
+                        <span class="tech-badge">Render</span>
+                    </div>
                     <h3 class="project-title">TVK CBE North Ward 19 – Complaint Portal</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">HTML/CSS/JS</span>
-                        <span class="tech-item">Python Flask</span>
-                        <span class="tech-item">Supabase/PostgreSQL</span>
-                        <span class="tech-item">Render</span>
+                    <p class="project-desc">Complaint submission and tracking website with location tagging, secure status updates, complaint code generation, and image uploads for local ward residents.</p>
+                    <div class="project-links">
+                        <a href="https://tvk-cbe-ward19.onrender.com/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
-                    <p class="project-desc">• Created a complaint submission and status-tracking website for a local ward.<br>• Implemented complaint details, location, phone number, optional image upload, complaint code generation, and status updates.</p>
-                    <a href="https://tvk-cbe-ward19.onrender.com" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; margin-top: 1rem;">Live Demo</a>
                 </div>
 
-                <div class="card reveal" style="transition-delay: 0.2s;">
-                    <h3 class="project-title">Personal Portfolio Website</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">HTML</span>
-                        <span class="tech-item">CSS</span>
-                        <span class="tech-item">JavaScript</span>
-                        <span class="tech-item">Vercel</span>
+                <!-- Project 5: Offline Exam Portal -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="Offline Exam Portal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ Offline Exam Portal Preview</span>
+                        </div>
                     </div>
-                    <p class="project-desc">• Designed and deployed a personal portfolio website to present projects, technical skills, and profile information.</p>
-                    <a href="https://github.com/DEEPAK-47-S/Deepak_Portfolio" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; margin-top: 1rem;">GitHub Repository</a>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python Flask</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">LAN Exam System</span>
+                    </div>
+                    <h3 class="project-title">Smart Exam Portal for Students (Offline Lab)</h3>
+                    <p class="project-desc">Offline examination system designed for college LAN/lab environments featuring question management, student coding workspace, submission handling, local activity logging, and browser lockdown controls.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/DEEPAK-47-S/Offline-Exam-Portal" target="_blank" class="btn btn-sm btn-primary">View GitHub Repo</a>
+                    </div>
                 </div>
 
-                <div class="card reveal" style="transition-delay: 0.3s; grid-column: span 2;">
-                    <h3 class="project-title">Other Academic Projects</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Python</span>
-                        <span class="tech-item">Computer Vision</span>
-                        <span class="tech-item">HTML/CSS/JS</span>
+                <!-- Project 6: Academic AI & Vision Apps -->
+                <div class="project-card cyber-card">
+                    <div class="project-img-container">
+                        <img src="" alt="Academic CV & Web Apps" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display:none;" />
+                        <div class="project-img-placeholder">
+                            <span>🖼️ Computer Vision & Web Apps</span>
+                        </div>
                     </div>
-                    <p class="project-desc" style="margin-bottom: 0;">
-                        • <strong>Motion Object Detection:</strong> Developed a basic application to identify movement in image or video input.<br>
-                        • <strong>Face Expression Detection:</strong> Worked on identifying facial expressions using computer vision techniques.<br>
-                        • <strong>E-Commerce Website:</strong> Designed a product-oriented website with a responsive user interface.
-                    </p>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">OpenCV / Vision</span>
+                        <span class="tech-badge">HTML/CSS</span>
+                    </div>
+                    <h3 class="project-title">Academic AI, Vision & E-Commerce Apps</h3>
+                    <p class="project-desc">Includes Motion Object Detection (movement tracking in video/image feeds), Face Expression Detection using computer vision algorithms, and a responsive E-Commerce product portal.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-primary">View GitHub Profile</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Certificates Gallery -->
         <section id="certificates" class="reveal">
