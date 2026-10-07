@@ -1331,6 +1331,161 @@ body {
     }
 }
 
+
+/* =========================================================
+   ULTRA-TRANSPARENT CYBER ENGINE & POLICE STROBE SYSTEM
+   ========================================================= */
+
+:root {
+    --glass-bg-ultra: rgba(10, 15, 30, 0.18);
+    --glass-border-ultra: rgba(239, 68, 68, 0.35);
+    --glass-blur-ultra: blur(14px) saturate(200%);
+}
+
+/* 100% Transparent UI Cards & Navbar */
+.navbar {
+    background: rgba(10, 15, 30, 0.25) !important;
+    backdrop-filter: var(--glass-blur-ultra) !important;
+    -webkit-backdrop-filter: var(--glass-blur-ultra) !important;
+    border-bottom: 1px solid var(--glass-border-ultra) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.cyber-card, .project-card, .cert-card, .edu-card, .skill-category, .profile-card-container {
+    background: var(--glass-bg-ultra) !important;
+    backdrop-filter: var(--glass-blur-ultra) !important;
+    -webkit-backdrop-filter: var(--glass-blur-ultra) !important;
+    border: 1px solid var(--glass-border-ultra) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+}
+
+/* Police Car Light Passing Effect (Red & Blue Strobe Sweep on Text) */
+.hero-subtitle, .section-subtitle, .cert-issuer, .police-light-text {
+    background: linear-gradient(90deg, #ef4444 0%, #ffffff 30%, #00ffff 60%, #ef4444 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: policeLightSweep 2s linear infinite !important;
+}
+
+@keyframes policeLightSweep {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Fast Aggressive Dragon Motion & Glitch */
+.hero-dragon-bg, .intro-logo, img[src*="dragon"], svg.dragon-logo, .kali-dragon {
+    animation: aggressiveDragonMotion 0.8s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55), highPowerDragonGlitch 3.5s infinite linear !important;
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8)) !important;
+}
+
+@keyframes aggressiveDragonMotion {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(-6px, 4px) scale(1.08) rotate(-2deg);
+    }
+    100% {
+        transform: translate(6px, -5px) scale(0.95) rotate(2deg);
+    }
+}
+
+@keyframes highPowerDragonGlitch {
+    0%, 88%, 100% {
+        filter: drop-shadow(0 0 20px #ef4444);
+    }
+    90% {
+        transform: translate(-15px, 8px) scale(1.15) skewX(-15deg);
+        filter: drop-shadow(-12px 0 30px #ef4444) drop-shadow(12px 0 30px #00ffff) contrast(250%);
+    }
+    92% {
+        transform: translate(15px, -10px) scale(0.85) skewX(18deg);
+        filter: drop-shadow(15px 0 35px #00ffff) drop-shadow(-15px 0 35px #ef4444) invert(30%);
+    }
+    94% {
+        transform: translate(-8px, 6px) scale(1.1) skewX(-10deg);
+        filter: drop-shadow(0 0 40px #ef4444) hue-rotate(180deg);
+    }
+    96% {
+        transform: translate(0, 0) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 20px #ef4444);
+    }
+}
+
+/* Synchronized 3.5s Whole Website Shake & Glitch */
+body, h1, h2, h3, .project-card, .cert-card, .edu-card, .skill-category, .skill-tag, .tech-badge {
+    animation: synchronizedGlitchShake 3.5s infinite linear !important;
+}
+
+@keyframes synchronizedGlitchShake {
+    0%, 89%, 100% {
+        transform: translate(0, 0);
+        filter: none;
+    }
+    90% {
+        transform: translate(-4px, 2px) rotate(-0.5deg);
+        text-shadow: -2px 0 #ef4444, 2px 0 #00ffff;
+        box-shadow: -4px 0 15px rgba(239, 68, 68, 0.6), 4px 0 15px rgba(0, 255, 255, 0.6) !important;
+    }
+    92% {
+        transform: translate(4px, -3px) rotate(0.5deg);
+        text-shadow: 2px 0 #ef4444, -2px 0 #00ffff;
+        box-shadow: 4px 0 15px rgba(239, 68, 68, 0.6), -4px 0 15px rgba(0, 255, 255, 0.6) !important;
+    }
+    94% {
+        transform: translate(-2px, -1px);
+        text-shadow: -1px 0 #ef4444, 1px 0 #00ffff;
+    }
+    96% {
+        transform: translate(0, 0);
+        text-shadow: none;
+    }
+}
+
+/* Mobile Ordering Optimization */
+@media (max-width: 650px) {
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 80px !important;
+    }
+
+    /* Profile picture right after header (Order 1) */
+    .profile-card-container {
+        order: 1 !important;
+        width: 120px !important;
+        height: 120px !important;
+        margin: 0 auto 16px auto !important;
+    }
+
+    /* Text Contents (Order 2) */
+    .hero-content {
+        order: 2 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Buttons (Order 3) */
+    .hero-cta {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-top: 16px !important;
+    }
+
+    .hero-cta .btn {
+        width: 100% !important;
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1488,7 +1643,7 @@ body {
                     <h3 class="project-title">NIET Student Election – Online Voting System</h3>
                     <p class="project-desc">Web-based student election system with separate voter and admin workflows, 1-voter-1-vote validation, duplicate vote prevention, candidate management, photo uploads, live result refresh, vote percentage display, and CSV exports.</p>
                     <div class="project-links">
-                        <a href="https://deepakumar.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-primary">View Live App</a>
+                        <a href="https://deepakumar.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
                 </div>
@@ -1509,7 +1664,7 @@ body {
                     <h3 class="project-title">SmartCampus – Campus Management & ERP Platform</h3>
                     <p class="project-desc">Unified campus management platform with role-based access for admins, students, faculty, HODs, mentors, and placement staff. Centralized interface for managing college activities and authentication flows.</p>
                     <div class="project-links">
-                        <a href="https://smart-campus-for-colleges.vercel.app/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://smart-campus-for-colleges.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
                 </div>
@@ -1530,7 +1685,7 @@ body {
                     <h3 class="project-title">Connecting Social Problems – Citizen Grievance Hub</h3>
                     <p class="project-desc">Web platform for users to submit and explore local community problems (roads, water, sanitation, environment, public safety) with structured digital reporting and category filtering.</p>
                     <div class="project-links">
-                        <a href="https://connecting-social-problems-web.vercel.app/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://connecting-social-problems-web.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
                 </div>
@@ -1551,7 +1706,7 @@ body {
                     <h3 class="project-title">TVK CBE North Ward 19 – Complaint Portal</h3>
                     <p class="project-desc">Complaint submission and tracking website with location tagging, secure status updates, complaint code generation, and image uploads for local ward residents.</p>
                     <div class="project-links">
-                        <a href="https://tvk-cbe-ward19.onrender.com/" target="_blank" class="btn btn-sm btn-primary">View Deployment</a>
+                        <a href="https://tvk-cbe-ward19.onrender.com/" target="_blank" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
                     </div>
                 </div>
@@ -1572,7 +1727,7 @@ body {
                     <h3 class="project-title">Smart Exam Portal for Students (Offline Lab)</h3>
                     <p class="project-desc">Offline examination system designed for college LAN/lab environments featuring question management, student coding workspace, submission handling, local activity logging, and browser lockdown controls.</p>
                     <div class="project-links">
-                        <a href="https://github.com/DEEPAK-47-S/Offline-Exam-Portal" target="_blank" class="btn btn-sm btn-primary">View GitHub Repo</a>
+                        <a href="https://github.com/DEEPAK-47-S/Offline-Exam-Portal" target="_blank" class="btn btn-sm btn-primary">Project Repo</a>
                     </div>
                 </div>
 
