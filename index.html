@@ -244,8 +244,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             background: rgba(3, 3, 5, 0.75);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.3s ease;
@@ -354,8 +354,8 @@
             border: 2px solid var(--glass-border);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             animation: profileGlitchPopIntro 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards,
                        lightProfileShakeGlitch 4.5s infinite linear 5s;
             opacity: 0;
@@ -461,6 +461,7 @@
             background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
         }
 
@@ -485,8 +486,8 @@
 
         .card {
             background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-md);
             padding: 2.5rem;
@@ -589,8 +590,8 @@
 
         .project-card {
             background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-md);
             padding: 1.75rem;
@@ -709,8 +710,8 @@
 
         .cert-card {
             background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-md);
             padding: 2rem;
@@ -775,8 +776,8 @@
         /* --- CONTACT SECTION & FORM --- */
         .contact-box {
             background: var(--glass-bg);
-            backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-lg);
             padding: 3.5rem;
@@ -835,6 +836,7 @@
             height: 48px;
             border-radius: 50%;
             background: rgba(15, 23, 42, 0.8);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(239, 68, 68, 0.4);
             color: #ef4444;
@@ -1016,6 +1018,147 @@
             }
         }
 
+    
+        /* --- UTILITY & COMPONENT CLASSES (ZERO INLINE STYLES) --- */
+        .logo-accent {
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .section-no-top-border {
+            border-top: none;
+        }
+
+        .mb-0 { margin-bottom: 0 !important; }
+        .mb-sm { margin-bottom: 0.35rem !important; }
+        .mb-md { margin-bottom: 0.75rem !important; }
+        .mb-lg { margin-bottom: 1.5rem !important; }
+        .mb-xl { margin-bottom: 2rem !important; }
+        .mt-sm { margin-top: 0.35rem !important; }
+        .mt-md { margin-top: 0.75rem !important; }
+
+        .internship-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .internship-btn {
+            font-size: 0.8rem !important;
+            padding: 0.35rem 0.75rem !important;
+        }
+
+        .text-lead {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .skill-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .skill-group-title {
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .placeholder-title {
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .placeholder-subtitle {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 0.35rem;
+        }
+
+        .academic-note {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .text-primary-accent {
+            color: var(--primary);
+        }
+
+        .contact-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .contact-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .contact-details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail-link {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .contact-detail-link:hover {
+            color: var(--primary);
+        }
+
+        .contact-links-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-full-width {
+            width: 100% !important;
+        }
+
+        .is-hidden {
+            display: none !important;
+        }
+
+        /* Delay utilities for reveal animation */
+        .delay-05 { transition-delay: 0.05s; }
+        .delay-10 { transition-delay: 0.1s; }
+        .delay-15 { transition-delay: 0.15s; }
+        .delay-20 { transition-delay: 0.2s; }
+        .delay-25 { transition-delay: 0.25s; }
+        .delay-30 { transition-delay: 0.3s; }
+        .delay-35 { transition-delay: 0.35s; }
+        .delay-40 { transition-delay: 0.4s; }
+        .delay-45 { transition-delay: 0.45s; }
+        .delay-50 { transition-delay: 0.5s; }
+
     </style>
 </head>
 <body>
@@ -1043,7 +1186,7 @@
     <div class="container">
         <!-- Navigation -->
         <nav>
-            <a href="#" class="logo">S<span style="color: red;margin-left: 10px;">DEEPAKUMAR</span></a>
+            <a href="#" class="logo">S<span class="logo-accent">DEEPAKUMAR</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="S_Deepakumar_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
@@ -1054,7 +1197,7 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero" id="about" style="border-top: none;">
+        <section class="hero section-no-top-border" id="about">
             <div class="hero-content">
                 <div class="hero-tag">Cyber Security & Software Engineering</div>
                 <h1 class="hero-title">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
@@ -1083,8 +1226,8 @@
             <div class="grid-2">
                 <div class="resume-section reveal">
                     <h3>Education</h3>
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <div class="edu-item" style="margin-bottom: 0;">
+                    <div class="card mb-xl">
+                        <div class="edu-item mb-0">
                             <div class="edu-title">B.E. Computer Science and Engineering</div>
                             <div class="edu-inst">Nehru Institute of Engineering and Technology, Coimbatore</div>
                             <div class="edu-date">2025–Present | 2nd Year | CGPA: 8.5</div>
@@ -1092,30 +1235,30 @@
                     </div>
 
                     <h3>Internship</h3>
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <div class="edu-item" style="margin-bottom: 0;">
-                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
-                                <div class="edu-title" style="margin-bottom: 0;">Incoming Cybersecurity Intern</div>
+                    <div class="card mb-xl">
+                        <div class="edu-item mb-0">
+                            <div class="internship-header">
+                                <div class="edu-title mb-0">Incoming Cybersecurity Intern</div>
                                 <span class="internship-badge">Upcoming</span>
                             </div>
-                            <div class="edu-inst" style="margin-top: 0.35rem;">AEX Xenora Technologies</div>
-                            <div style="margin-top: 0.75rem;">
-                                <a href="https://www.xenoratechnologies.in/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">Visit Company Website &rarr;</a>
+                            <div class="edu-inst mt-sm">AEX Xenora Technologies</div>
+                            <div class="mt-md">
+                                <a href="https://www.xenoratechnologies.in/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline internship-btn">Visit Company Website &rarr;</a>
                             </div>
                         </div>
                     </div>
                     
                     <h3>Professional Summary</h3>
                     <div class="card">
-                        <p style="color: var(--text-muted); line-height: 1.8; font-weight: 300;">Computer Science and Engineering student with hands-on experience developing full-stack web applications, Python/Flask backends, database-driven systems, and responsive interfaces. Project work includes AI-assisted transit-demand planning, student elections, campus management, offline examinations, and citizen grievance platforms. Interested in cybersecurity and software development, with programming experience in Python, JavaScript, and SQL and familiarity with Git, GitHub, and Postman.</p>
+                        <p class="text-lead">Computer Science and Engineering student with hands-on experience developing full-stack web applications, Python/Flask backends, database-driven systems, and responsive interfaces. Project work includes AI-assisted transit-demand planning, student elections, campus management, offline examinations, and citizen grievance platforms. Interested in cybersecurity and software development, with programming experience in Python, JavaScript, and SQL and familiarity with Git, GitHub, and Postman.</p>
                     </div>
                 </div>
 
-                <div class="resume-section reveal" style="transition-delay: 0.2s;">
+                <div class="resume-section reveal delay-20">
                     <h3>Technical Skills</h3>
                     <div class="card">
-                        <div style="margin-bottom: 1.75rem;">
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Programming</h4>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Programming</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">C</span>
@@ -1125,8 +1268,8 @@
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 1.75rem;">
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Frontend</h4>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Frontend</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">HTML5</span>
                                 <span class="skill-tag">CSS3</span>
@@ -1135,8 +1278,8 @@
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 1.75rem;">
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Backend & APIs</h4>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Backend & APIs</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">Flask</span>
@@ -1144,8 +1287,8 @@
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 1.75rem;">
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Databases</h4>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Databases</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">SQLite</span>
                                 <span class="skill-tag">PostgreSQL</span>
@@ -1154,8 +1297,8 @@
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 1.75rem;">
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Tools & Platforms</h4>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Tools & Platforms</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">Git</span>
                                 <span class="skill-tag">GitHub</span>
@@ -1166,7 +1309,7 @@
                         </div>
 
                         <div>
-                            <h4 style="color: white; margin-bottom: 0.75rem; font-weight: 500;">Core Concepts</h4>
+                            <h4 class="skill-group-title">Core Concepts</h4>
                             <div class="skills-wrap">
                                 <span class="skill-tag">Object-Oriented Programming</span>
                                 <span class="skill-tag">Data Structures</span>
@@ -1194,9 +1337,9 @@
                     <div class="project-img-container">
                         <div class="project-img-placeholder">
                             <div>
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖 🚍</div>
-                                <strong style="font-size: 1rem; color: #ffffff;">FestivalFlow AI</strong>
-                                <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.35rem;">Smart Population & Transit Engine</div>
+                                <div class="placeholder-icon">🤖 🚍</div>
+                                <strong class="placeholder-title">FestivalFlow AI</strong>
+                                <div class="placeholder-subtitle">Smart Population & Transit Engine</div>
                             </div>
                         </div>
                     </div>
@@ -1218,7 +1361,7 @@
                 <div id="project-block-2" class="project-card cyber-card">
                     <div class="project-img-container">
                         <img src="Project Images/NIET Student Election Preview.png" alt="NIET Student Election" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
-                        <div class="project-img-placeholder" style="display:none;">
+                        <div class="project-img-placeholder is-hidden">
                             <span>🖼️ NIET Student Election</span>
                         </div>
                     </div>
@@ -1238,7 +1381,7 @@
                 <div id="project-block-3" class="project-card cyber-card">
                     <div class="project-img-container">
                         <img src="Project Images/SmartCampus Preview.png" alt="SmartCampus" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
-                        <div class="project-img-placeholder" style="display:none;">
+                        <div class="project-img-placeholder is-hidden">
                             <span>🖼️ SmartCampus Preview</span>
                         </div>
                     </div>
@@ -1258,7 +1401,7 @@
                 <div id="project-block-4" class="project-card cyber-card">
                     <div class="project-img-container">
                         <img src="Project Images/Connecting Social Problems.png" alt="Connecting Social Problems" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
-                        <div class="project-img-placeholder" style="display:none;">
+                        <div class="project-img-placeholder is-hidden">
                             <span>🖼️ Connecting Social Problems</span>
                         </div>
                     </div>
@@ -1278,7 +1421,7 @@
                 <div id="project-block-5" class="project-card cyber-card">
                     <div class="project-img-container">
                         <img src="Project Images/TVK Ward 19 Portal Preview.png" alt="TVK CBE Ward 19" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
-                        <div class="project-img-placeholder" style="display:none;">
+                        <div class="project-img-placeholder is-hidden">
                             <span>🖼️ TVK Ward 19 Portal</span>
                         </div>
                     </div>
@@ -1298,7 +1441,7 @@
                 <div id="project-block-6" class="project-card cyber-card">
                     <div class="project-img-container">
                         <img src="Project Images/Offline Exam Portal Preview.png" alt="Offline Exam Portal" onload="if(this.nextElementSibling) this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
-                        <div class="project-img-placeholder" style="display:none;">
+                        <div class="project-img-placeholder is-hidden">
                             <span>🖼️ Offline Exam Portal</span>
                         </div>
                     </div>
@@ -1319,9 +1462,9 @@
                     <div class="project-img-container">
                         <div class="project-img-placeholder">
                             <div>
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👁️ 🛒</div>
-                                <strong style="font-size: 1rem; color: #ffffff;">Academic CV & Web Apps</strong>
-                                <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.35rem;">Vision Experiments & Interfaces</div>
+                                <div class="placeholder-icon">👁️ 🛒</div>
+                                <strong class="placeholder-title">Academic CV & Web Apps</strong>
+                                <div class="placeholder-subtitle">Vision Experiments & Interfaces</div>
                             </div>
                         </div>
                     </div>
@@ -1333,7 +1476,7 @@
                     <h3 class="project-title">Academic AI, Vision & E-Commerce Apps</h3>
                     <p class="project-desc">Includes Motion Object Detection (movement tracking in video/image feeds), Face Expression Detection using computer vision algorithms, and an experimental responsive E-Commerce product portal.</p>
                     <div class="project-links">
-                        <span style="font-size: 0.85rem; color: #94a3b8; font-style: italic;">Academic Coursework Projects</span>
+                        <span class="academic-note">Academic Coursework Projects</span>
                     </div>
                 </div>
 
@@ -1348,70 +1491,70 @@
                 <p class="section-subtitle">Official certifications, masterclasses, and hackathon participation</p>
             </div>
             <div class="cert-gallery">
-                <div class="cert-card reveal" style="transition-delay: 0.05s;">
+                <div class="cert-card reveal delay-05">
                     <div class="cert-icon">🏆</div>
                     <div class="cert-name">SAKTHI HACKFEST ’26 — 24-Hour Hackathon</div>
-                    <div class="cert-issuer">Sree Sakthi Engineering College, Coimbatore | 10–11 October 2026<br><span style="color: var(--primary);">Generative AI Domain</span> (Participation Certificate)</div>
+                    <div class="cert-issuer">Sree Sakthi Engineering College, Coimbatore | 10–11 October 2026<br><span class="text-primary-accent">Generative AI Domain</span> (Participation Certificate)</div>
                     <a href="https://github.com/DEEPAK-47-S/Sakthi_Hackton_2026" target="_blank" rel="noopener noreferrer" class="cert-link">Hackathon Project &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.1s;">
+                <div class="cert-card reveal delay-10">
                     <div class="cert-icon">📜</div>
                     <div class="cert-name">30 Days MasterClass in Full Stack Development</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Jan–Feb 2026)</div>
                     <a href="Cirtificates/Deepakumar Full Stack Development Certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.15s;">
+                <div class="cert-card reveal delay-15">
                     <div class="cert-icon">🤖</div>
                     <div class="cert-name">30 Days MasterClass in Artificial Intelligence</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Mar–Apr 2026)</div>
                     <a href="Cirtificates/Deepakumar Artificial Intelligence.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.2s;">
+                <div class="cert-card reveal delay-20">
                     <div class="cert-icon">🎨</div>
                     <div class="cert-name">30 Days MasterClass in UI/UX Design</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Apr–May 2026)</div>
                     <a href="Cirtificates/Deepakumar UI UX Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.25s;">
+                <div class="cert-card reveal delay-25">
                     <div class="cert-icon">⚡</div>
                     <div class="cert-name">Frontend Bootcamp: Events in JavaScript</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Feb 2026)</div>
                     <a href="Cirtificates/Deepakumar Frontend Bootcamp Event in JavaScript.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.3s;">
+                <div class="cert-card reveal delay-30">
                     <div class="cert-icon">🔌</div>
                     <div class="cert-name">API Working + Postman Introduction</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited</div>
                     <a href="Cirtificates/Deepakumar API Working + Postman Introduction.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.35s;">
+                <div class="cert-card reveal delay-35">
                     <div class="cert-icon">🛡️</div>
                     <div class="cert-name">From Click to Hack — How Cyber Attacks Happen</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Apr 2026)</div>
                     <a href="Cirtificates/Deepakumar From Click to Hack _ How Cyber Attacks Happends.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.4s;">
+                <div class="cert-card reveal delay-40">
                     <div class="cert-icon">💡</div>
                     <div class="cert-name">AI-Driven IT Sectors (2-Hour Skill Camp)</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited (Apr 2026)</div>
                     <a href="Cirtificates/Deepakumar AI Driven IT Sectors.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.45s;">
+                <div class="cert-card reveal delay-45">
                     <div class="cert-icon">📄</div>
                     <div class="cert-name">ATS Resume Optimization Workshop</div>
                     <div class="cert-issuer">Tech Drew (May 2026)</div>
                     <a href="Cirtificates/Deepakumar ATS Resume Optimization Workshop.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">View Document &rarr;</a>
                 </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.5s;">
+                <div class="cert-card reveal delay-50">
                     <div class="cert-icon">📱</div>
                     <div class="cert-name">UI/UX Webinar Certificate</div>
                     <div class="cert-issuer">NoviTech R&D Private Limited</div>
@@ -1429,21 +1572,21 @@
             <div class="contact-box">
                 <div class="grid-2">
                     <div>
-                        <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem; color: #ffffff;">Let's Work Together</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; font-weight: 300; line-height: 1.7;">
+                        <h3 class="contact-title">Let's Work Together</h3>
+                        <p class="contact-desc">
                             Currently seeking internship opportunities in software development, full-stack, or cybersecurity. Feel free to send a message or connect through my profiles below.
                         </p>
                         
-                        <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; color: #e2e8f0; font-size: 0.95rem;">
-                                <span style="color: var(--primary);">📍</span> Karur, Tamil Nadu
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <span class="text-primary-accent">📍</span> Karur, Tamil Nadu
                             </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; color: #e2e8f0; font-size: 0.95rem;">
-                                <span style="color: var(--primary);">✉️</span> <a href="mailto:skdeepakumar000@gmail.com" style="color: #e2e8f0; text-decoration: none;">skdeepakumar000@gmail.com</a>
+                            <div class="contact-detail-item">
+                                <span class="text-primary-accent">✉️</span> <a href="mailto:skdeepakumar000@gmail.com" class="contact-detail-link">skdeepakumar000@gmail.com</a>
                             </div>
                         </div>
 
-                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <div class="contact-links-group">
                             <a href="mailto:skdeepakumar000@gmail.com" class="btn btn-sm btn-primary">Email Me</a>
                             <a href="https://github.com/DEEPAK-47-S" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
                             <a href="https://linkedin.com/in/deepakumar-s" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">LinkedIn</a>
@@ -1465,7 +1608,7 @@
                                 <label for="message" class="form-label">Message</label>
                                 <textarea id="message" class="form-input" required placeholder="How can I help you?"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-full-width" id="submit-btn">Send Message</button>
                             <div id="form-status"></div>
                         </form>
                     </div>
