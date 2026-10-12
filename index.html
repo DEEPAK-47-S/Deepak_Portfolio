@@ -227,18 +227,27 @@
             font-weight: 300;
         }
 
-        /* --- NAVIGATION --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.75rem 0;
+        /* --- FULL-WIDTH NAVIGATION HEADER --- */
+        .site-header {
+            width: 100%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: transparent;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(3, 3, 5, 0.85);
+            -webkit-backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
 
         .logo {
@@ -881,8 +890,8 @@
         }
 
         @media (max-width: 868px) {
-            nav {
-                padding: 1rem 0;
+            .header-container {
+                padding: 1rem 1.5rem;
             }
 
             .mobile-nav-toggle {
@@ -994,8 +1003,8 @@
                 padding: 0 1rem;
             }
 
-            nav {
-                padding: 0.75rem 0;
+            .header-container {
+                padding: 0.75rem 1rem;
             }
 
             .logo {
@@ -1323,9 +1332,9 @@
         <img id="kali-img" src="kali-dragon-red.png" alt="Kali Linux Dragon">
     </div>
 
-    <div class="container">
-        <!-- Navigation -->
-        <nav>
+    <!-- Full-Width Sticky Header -->
+    <header class="site-header">
+        <div class="header-container">
             <a href="#" class="logo">S<span class="logo-accent">DEEPAKUMAR</span></a>
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1342,8 +1351,10 @@
                 <li><a href="#certificates" class="nav-item-link">Certificates</a></li>
                 <li><a href="#contact" class="nav-item-link">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </header>
 
+    <div class="container">
         <!-- Hero Section -->
         <section class="hero section-no-top-border" id="about">
             <div class="hero-content">
