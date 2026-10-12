@@ -222,14 +222,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             -webkit-backdrop-filter: var(--glass-blur);
             backdrop-filter: var(--glass-blur);
-            background: rgba(3, 3, 5, 0.75);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(3, 3, 5, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
 
@@ -241,6 +241,9 @@
             text-decoration: none;
             letter-spacing: -0.5px;
             transition: color 0.25s ease;
+            z-index: 1002;
+            display: inline-flex;
+            align-items: center;
         }
 
         .logo:hover {
@@ -249,7 +252,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
             align-items: center;
         }
@@ -259,7 +262,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            padding: 0.4rem 0.8rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 8px;
             transition: color 0.25s ease, background 0.25s ease, text-shadow 0.25s ease;
         }
@@ -268,6 +271,36 @@
             color: var(--primary);
             background: rgba(239, 68, 68, 0.1);
             text-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Mobile Hamburger Toggle Button */
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1002;
+            transition: all 0.25s ease;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-nav-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .mobile-nav-toggle svg {
+            width: 22px;
+            height: 22px;
+            display: block;
+            stroke: currentColor;
         }
 
         /* --- HERO SECTION --- */
@@ -839,7 +872,80 @@
             }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 868px) {
+            nav {
+                padding: 1rem 0;
+            }
+
+            .mobile-nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 78%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.96);
+                -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(20px);
+                border-left: 1px solid rgba(239, 68, 68, 0.25);
+                box-shadow: -10px 0 35px rgba(0, 0, 0, 0.8);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 5.5rem 2rem 2rem 2rem;
+                gap: 1.25rem;
+                z-index: 1001;
+                transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .nav-links.nav-active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                font-size: 1.1rem;
+                padding: 0.85rem 1rem;
+                border-radius: 8px;
+                border: 1px solid transparent;
+            }
+
+            .nav-links a:hover,
+            .nav-links a:active {
+                border-color: rgba(239, 68, 68, 0.3);
+                background: rgba(239, 68, 68, 0.12);
+            }
+
+            /* Backdrop overlay when menu is open */
+            .nav-backdrop {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.65);
+                -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px);
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .nav-backdrop.active {
+                display: block;
+                opacity: 1;
+            }
+
             .hero {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -858,6 +964,7 @@
 
             .hero-btns {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .hero-title {
@@ -872,18 +979,6 @@
             .contact-box {
                 padding: 2.5rem;
             }
-
-            nav {
-                flex-direction: column;
-                gap: 1.25rem;
-                padding: 1.25rem 0;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.75rem;
-            }
         }
 
         @media (max-width: 600px) {
@@ -892,26 +987,51 @@
             }
 
             section {
-                padding: 4.5rem 0;
+                padding: 4rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 2.25rem;
             }
 
             .section-title {
-                font-size: 2rem;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
+                font-size: 1.85rem;
                 letter-spacing: -0.5px;
             }
 
-            .hero-desc {
+            .section-subtitle {
                 font-size: 0.95rem;
-                line-height: 1.6;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 0 3.5rem 0;
+                gap: 2rem;
+            }
+
+            .hero-tag {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                padding: 0.25rem 0.65rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.15rem;
+                letter-spacing: -0.5px;
+                line-height: 1.15;
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-desc {
+                font-size: 0.92rem;
+                line-height: 1.65;
+                margin-bottom: 1.75rem;
             }
 
             .profile-card {
-                width: 220px;
-                height: 220px;
+                width: 240px;
+                height: 240px;
             }
 
             .projects-grid, .cert-gallery {
@@ -924,24 +1044,30 @@
             }
 
             .contact-box {
-                padding: 1.75rem;
+                padding: 1.5rem;
+            }
+
+            .contact-box h2 {
+                font-size: 1.75rem;
             }
 
             .btn {
                 width: 100%;
+                justify-content: center;
             }
 
             .hero-btns, .project-links {
                 flex-direction: column;
                 width: 100%;
+                gap: 0.75rem;
             }
 
             #intro-dragon {
-                width: 200px;
+                width: 220px;
             }
 
             .intro-glitch-top {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 letter-spacing: 4px;
             }
 
@@ -949,6 +1075,12 @@
                 width: 320px;
                 height: 320px;
                 margin: -160px 0 0 -160px;
+            }
+
+            .internship-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
             }
         }
 
@@ -1134,12 +1266,20 @@
         <!-- Navigation -->
         <nav>
             <a href="#" class="logo">S<span class="logo-accent">DEEPAKUMAR</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="S_Deepakumar_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="nav-backdrop" id="navBackdrop"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-item-link">About</a></li>
+                <li><a href="S_Deepakumar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-item-link">Resume</a></li>
+                <li><a href="#projects" class="nav-item-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-item-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-item-link">Contact</a></li>
             </ul>
         </nav>
 
@@ -1753,6 +1893,55 @@
                 }
             });
         }
+
+        /* --- MOBILE NAVIGATION TOGGLE LOGIC --- */
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navBackdrop = document.getElementById('navBackdrop');
+
+        function toggleMobileMenu(forceClose = false) {
+            if (!navLinks) return;
+            const isOpen = forceClose ? false : !navLinks.classList.contains('nav-active');
+            if (isOpen) {
+                navLinks.classList.add('nav-active');
+                if (navBackdrop) navBackdrop.classList.add('active');
+                if (mobileNavToggle) {
+                    mobileNavToggle.setAttribute('aria-expanded', 'true');
+                    mobileNavToggle.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            } else {
+                navLinks.classList.remove('nav-active');
+                if (navBackdrop) navBackdrop.classList.remove('active');
+                if (mobileNavToggle) {
+                    mobileNavToggle.setAttribute('aria-expanded', 'false');
+                    mobileNavToggle.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            }
+        }
+
+        if (mobileNavToggle) {
+            mobileNavToggle.addEventListener('click', () => toggleMobileMenu());
+        }
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', () => toggleMobileMenu(true));
+        }
+
+        // Auto close mobile drawer when any navigation link is clicked
+        document.querySelectorAll('.nav-item-link').forEach((link) => {
+            link.addEventListener('click', () => toggleMobileMenu(true));
+        });
 
         /* --- SCROLL TO TOP BUTTON LOGIC --- */
         const scrollTopBtn = document.getElementById('scrollTopBtn');
