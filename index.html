@@ -388,7 +388,7 @@
             background: transparent;
             -webkit-backdrop-filter: blur(4px);
             backdrop-filter: blur(4px);
-            animation: profilePopUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 3.1s forwards;
+            animation: profileGlitchReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
             opacity: 0;
             transform: scale(0.85);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -400,14 +400,48 @@
             box-shadow: 0 20px 50px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.35);
         }
 
-        @keyframes profilePopUp {
+        @keyframes profileGlitchReveal {
             0% {
                 opacity: 0;
-                transform: scale(0.85) translateY(20px);
+                transform: scale(0.8) translateY(25px);
+                filter: brightness(2) contrast(1.5) drop-shadow(0 0 30px #ef4444);
+                clip-path: inset(40% 0 30% 0);
+            }
+            15% {
+                opacity: 0.85;
+                transform: scale(1.05) translate(-8px, -4px) skewX(6deg);
+                filter: drop-shadow(-8px 0 0 #00ffff) drop-shadow(8px 0 0 #ff003c) contrast(1.8);
+                clip-path: inset(10% 0 65% 0);
+            }
+            30% {
+                opacity: 0.9;
+                transform: scale(0.96) translate(6px, 3px) skewX(-4deg);
+                filter: drop-shadow(6px 0 0 #00ff66) drop-shadow(-6px 0 0 #ef4444);
+                clip-path: inset(55% 0 15% 0);
+            }
+            45% {
+                opacity: 1;
+                transform: scale(1.03) translate(-4px, 2px) skewX(2deg);
+                filter: drop-shadow(-5px 0 0 #00ffff) drop-shadow(5px 0 0 #ef4444);
+                clip-path: inset(5% 0 40% 0);
+            }
+            60% {
+                opacity: 0.95;
+                transform: scale(0.99) translate(3px, -2px) skewX(-1deg);
+                filter: drop-shadow(3px 0 0 #ff0055);
+                clip-path: inset(0 0 0 0);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1.01) translate(-1px, 1px);
+                filter: drop-shadow(-2px 0 0 rgba(239, 68, 68, 0.6));
+                clip-path: inset(0 0 0 0);
             }
             100% {
                 opacity: 1;
-                transform: scale(1) translateY(0);
+                transform: scale(1) translate(0, 0) skewX(0deg);
+                filter: drop-shadow(0 0 0 transparent);
+                clip-path: inset(0 0 0 0);
             }
         }
 
@@ -1863,6 +1897,7 @@
         }
 
         /* --- KALI DRAGON AUTONOMOUS & CHASE ANIMATION --- */
+        /* --- KALI DRAGON EMERGE FROM PROFILE & AUTONOMOUS CHASE --- */
         const dragonContainer = document.getElementById('kali-dragon');
         if (dragonContainer) {
             let mouseX = window.innerWidth / 2;
@@ -1873,6 +1908,36 @@
             let randomTargetY = currentY;
             let isMouseActive = false;
             let idleTimer = null;
+            let initialEmerged = false;
+
+            // Align dragon initially behind the profile image box
+            function getProfileCenter() {
+                const profileCard = document.querySelector('.profile-card');
+                if (profileCard) {
+                    const rect = profileCard.getBoundingClientRect();
+                    return {
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + rect.height / 2
+                    };
+                }
+                return { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            }
+
+            const initCenter = getProfileCenter();
+            currentX = initCenter.x;
+            currentY = initCenter.y;
+            randomTargetX = currentX;
+            randomTargetY = currentY;
+
+            // Scale and emerge from profile image when glitch occurs
+            dragonContainer.style.transition = 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+            dragonContainer.style.transform = `translate3d(${currentX - window.innerWidth / 2}px, ${currentY - window.innerHeight / 2}px, 0) scale(0.65)`;
+
+            setTimeout(() => {
+                initialEmerged = true;
+                dragonContainer.style.transition = 'none';
+                setNewRandomTarget();
+            }, 3600);
 
             window.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
@@ -1892,39 +1957,40 @@
                 randomTargetX = marginX + Math.random() * (window.innerWidth - marginX * 2);
                 randomTargetY = marginY + Math.random() * (window.innerHeight - marginY * 2);
             }
-            setNewRandomTarget();
 
             function animateDragon() {
-                const targetX = isMouseActive ? mouseX : randomTargetX;
-                const targetY = isMouseActive ? mouseY : randomTargetY;
-                const speed = isMouseActive ? 0.015 : 0.005;
+                if (initialEmerged) {
+                    const targetX = isMouseActive ? mouseX : randomTargetX;
+                    const targetY = isMouseActive ? mouseY : randomTargetY;
+                    const speed = isMouseActive ? 0.015 : 0.005;
 
-                currentX += (targetX - currentX) * speed;
-                currentY += (targetY - currentY) * speed;
+                    currentX += (targetX - currentX) * speed;
+                    currentY += (targetY - currentY) * speed;
 
-                if (!isMouseActive && Math.abs(targetX - currentX) < 10 && Math.abs(targetY - currentY) < 10) {
-                    setNewRandomTarget();
+                    if (!isMouseActive && Math.abs(targetX - currentX) < 10 && Math.abs(targetY - currentY) < 10) {
+                        setNewRandomTarget();
+                    }
+
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+                    const maxMoveX = window.innerWidth * 0.4;
+                    const maxMoveY = window.innerHeight * 0.4;
+                    
+                    let moveX = currentX - centerX;
+                    let moveY = currentY - centerY;
+                    if(moveX > maxMoveX) moveX = maxMoveX;
+                    if(moveX < -maxMoveX) moveX = -maxMoveX;
+                    if(moveY > maxMoveY) moveY = maxMoveY;
+                    if(moveY < -maxMoveY) moveY = -maxMoveY;
+
+                    const nX = moveX / (maxMoveX || 1);
+                    const nY = moveY / (maxMoveY || 1);
+                    const maxRotation = 15; 
+                    const rotateX = nY * -maxRotation; 
+                    const rotateY = nX * maxRotation;
+
+                    dragonContainer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                 }
-
-                const centerX = window.innerWidth / 2;
-                const centerY = window.innerHeight / 2;
-                const maxMoveX = window.innerWidth * 0.4;
-                const maxMoveY = window.innerHeight * 0.4;
-                
-                let moveX = currentX - centerX;
-                let moveY = currentY - centerY;
-                if(moveX > maxMoveX) moveX = maxMoveX;
-                if(moveX < -maxMoveX) moveX = -maxMoveX;
-                if(moveY > maxMoveY) moveY = maxMoveY;
-                if(moveY < -maxMoveY) moveY = -maxMoveY;
-
-                const nX = moveX / (maxMoveX || 1);
-                const nY = moveY / (maxMoveY || 1);
-                const maxRotation = 15; 
-                const rotateX = nY * -maxRotation; 
-                const rotateY = nX * maxRotation;
-
-                dragonContainer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                 requestAnimationFrame(animateDragon);
             }
             animateDragon();
