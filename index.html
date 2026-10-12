@@ -1643,9 +1643,10 @@
         });
 
         /* --- INTRO ANIMATION LOGIC --- */
-        window.addEventListener('load', () => {
+        function hideIntroScreen() {
             const introScreen = document.getElementById('intro-screen');
-            if (introScreen) {
+            if (introScreen && introScreen.dataset.hidden !== 'true') {
+                introScreen.dataset.hidden = 'true';
                 setTimeout(() => {
                     introScreen.style.opacity = '0';
                     setTimeout(() => {
@@ -1653,7 +1654,10 @@
                     }, 500);
                 }, 2600);
             }
-        });
+        }
+        window.addEventListener('load', hideIntroScreen);
+        // Fallback: hide intro even if external image/font takes long to fire window.load
+        setTimeout(hideIntroScreen, 3000);
 
         /* --- MATRIX HACKER RAIN ANIMATION --- */
         const canvas = document.getElementById('matrix-rain');
@@ -1661,7 +1665,7 @@
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""'#&_(),.;:?!\\|{}<>[]^~';
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%#&_(),.;:?!|{}<>[]^~';
             const fontSize = 16;
             let columns = Math.ceil(canvas.width / fontSize);
             let drops = Array.from({ length: columns }).fill(1);
