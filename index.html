@@ -991,98 +991,151 @@
 
         @media (max-width: 600px) {
             .container {
-                padding: 0 1.25rem;
+                padding: 0 1rem;
+            }
+
+            nav {
+                padding: 0.75rem 0;
+            }
+
+            .logo {
+                font-size: 1.05rem;
+            }
+
+            .mobile-nav-toggle {
+                width: 36px;
+                height: 36px;
+                padding: 0.4rem;
+            }
+
+            .mobile-nav-toggle svg {
+                width: 18px;
+                height: 18px;
             }
 
             section {
-                padding: 4rem 0;
+                padding: 2.5rem 0;
             }
 
             .section-header {
-                margin-bottom: 2.25rem;
+                margin-bottom: 1.75rem;
             }
 
             .section-title {
-                font-size: 1.85rem;
+                font-size: 1.65rem;
                 letter-spacing: -0.5px;
             }
 
             .section-subtitle {
-                font-size: 0.95rem;
+                font-size: 0.88rem;
             }
 
+            /* Clean Mobile Viewport Fit for Hero */
             .hero {
+                flex-direction: column-reverse;
                 min-height: 0;
-                padding: 2rem 0 3.5rem 0;
-                gap: 2rem;
+                padding: 0.5rem 0 2rem 0;
+                gap: 1.25rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
             }
 
             .hero-tag {
-                font-size: 0.75rem;
-                letter-spacing: 1.5px;
-                padding: 0.25rem 0.65rem;
-                margin-bottom: 1rem;
+                font-size: 0.68rem;
+                letter-spacing: 1px;
+                padding: 0.2rem 0.55rem;
+                margin-bottom: 0.65rem;
             }
 
             .hero-title {
-                font-size: 2.15rem;
+                font-size: 1.65rem;
                 letter-spacing: -0.5px;
-                line-height: 1.15;
-                margin-bottom: 1.25rem;
+                line-height: 1.2;
+                margin-bottom: 0.65rem;
             }
 
             .hero-desc {
-                font-size: 0.92rem;
-                line-height: 1.65;
-                margin-bottom: 1.75rem;
+                font-size: 0.84rem;
+                line-height: 1.5;
+                margin-bottom: 1.15rem;
+            }
+
+            .hero-image {
+                display: flex;
+                justify-content: center;
+                width: 100%;
             }
 
             .profile-card {
-                width: 240px;
-                height: 240px;
+                width: 170px;
+                height: 170px;
+                border-radius: 16px;
+                border-width: 2px;
+            }
+
+            .hero-btns {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            .hero-btns .btn {
+                width: auto;
+                flex: 1 1 calc(50% - 0.5rem);
+                min-width: 130px;
+                padding: 0.55rem 0.75rem;
+                font-size: 0.82rem;
             }
 
             .projects-grid, .cert-gallery {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 1.25rem;
             }
 
             .card, .cert-card {
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
             .contact-box {
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
             .contact-box h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
-            .btn {
+            .project-links {
+                flex-direction: row;
+                flex-wrap: wrap;
                 width: 100%;
-                justify-content: center;
+                gap: 0.5rem;
             }
 
-            .hero-btns, .project-links {
-                flex-direction: column;
-                width: 100%;
-                gap: 0.75rem;
+            .project-links .btn {
+                flex: 1;
+                font-size: 0.8rem;
+                padding: 0.45rem 0.65rem;
             }
 
             #intro-dragon {
-                width: 220px;
+                width: 180px;
             }
 
             .intro-glitch-top {
-                font-size: 1.6rem;
-                letter-spacing: 4px;
+                font-size: 1.4rem;
+                letter-spacing: 3px;
             }
 
             #kali-dragon {
-                width: 320px;
-                height: 320px;
-                margin: -160px 0 0 -160px;
+                width: 280px;
+                height: 280px;
+                margin: -140px 0 0 -140px;
             }
 
             .internship-header {
