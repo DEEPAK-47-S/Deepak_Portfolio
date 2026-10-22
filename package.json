@@ -1,9 +1,14 @@
 {
   "name": "portfolio-deepakumar",
   "version": "1.0.0",
-  "description": "Portfolio for S. Deepakumar",
+  "description": "Portfolio for S. Deepakumar - Full Stack Web Developer & Cyber Security Enthusiast",
   "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "serve .",
+    "test:contact": "node scratch/test_contact_api.js"
+  },
   "dependencies": {
-    "nodemailer": "^6.9.5"
+    "nodemailer": "^10.2.0"
   }
 }
