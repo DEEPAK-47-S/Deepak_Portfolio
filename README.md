@@ -19,6 +19,22 @@ This repository contains the production source code for the personal portfolio o
 - **Mobile-First & Fully Responsive**: Tested across viewports from 320px ultra-compact mobile up to 1920px Full HD desktop, including dynamic safe-area insets and landscape modes.
 - **Accessible (WCAG 2.1 AAA Compliant)**: Full keyboard navigation, visible focus indicators, screen-reader ARIA states, and `prefers-reduced-motion` support.
 - **Hardened Contact API**: Vercel Serverless Function (`api/contact.js`) with server-side validation, anti-spam honeypot, in-memory rate limiting, and Gmail SMTP integration.
+- **100% Resume Synchronized**: Complete alignment with official resume projects, including AUGIS (AICTE Problem-Statement Prototype), FestivalFlow AI (Sakthi Hackfest '26), Connecting Social Problems, TVK Ward 19, Offline Exam Portal, NIET Online Voting, and SmartCampus ERP.
+
+---
+
+## 💻 Featured Projects Portfolio
+
+| Project | Technologies | Key Highlights | Links |
+|---|---|---|---|
+| **AUGIS** (AICTE Grievance Intelligence) | Python, Django, PostgreSQL, HTMX, Chart.js, Gemini AI | Centralized institution-related complaint tracking, bureau-wise status synchronization, overlap alerts, and Gemini AI-assisted grievance scrutiny. | [Live Demo](https://college-complaints.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/College-Complaints) |
+| **FestivalFlow AI** (Smart Transit Engine) | Python, Flask, JavaScript, Leaflet.js, PostGIS, OR-Tools | AI-assisted transit-demand planning, festival passenger surge forecasting across Tamil Nadu hubs, and fleet optimization. | [Live Demo](https://sakthi-hackton-2026.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Sakthi_Hackton_2026) |
+| **Connecting Social Problem** | React, JavaScript, HTML, CSS, Supabase / PostgreSQL | Citizen grievance and reporting platform categorized under roads, water, sanitation, agriculture, and public safety. | [Live Demo](https://connecting-social-problems-web.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Connecting-Social-Problems) |
+| **TVK CBE North Ward 19** | Python Flask, Supabase / PostgreSQL, JavaScript, Render | Ward complaint submission and tracking portal with geo-location fields, complaint reference codes, and status progress. | [Live Demo](https://tvk-cbe-ward19.onrender.com/) • [GitHub](https://github.com/DEEPAK-47-S/TVK) |
+| **Smart Exam Portal for Students** | Python Flask, SQLite, HTML5, CSS3, JavaScript | Offline LAN examination portal with separate teacher/student workflows, question management, and local submission tracking. | [GitHub](https://github.com/DEEPAK-47-S/Offline-Exam-Portal) |
+| **NIET Student Election** | Python Flask, SQLite, HTML5, CSS3, JavaScript | Web-based student election system with voter registration, candidate photo management, duplicate prevention, and CSV export. | [Live Demo](https://deepakumar.pythonanywhere.com/) • [GitHub](https://github.com/DEEPAK-47-S/Online-Voting) |
+| **SmartCampus ERP Platform** | Web Application, Role-Based Access, Vercel | Centralized campus management interface with distinct workflows for students, faculty, and administrators. | [Live Demo](https://smart-campus-for-colleges.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Smart-Campus-for-Colleges) |
+| **Academic AI & Vision Experiments** | Python, OpenCV, Computer Vision, HTML/CSS | Motion object detection, real-time facial expression analysis, and responsive e-commerce storefront portal. | [GitHub](https://github.com/DEEPAK-47-S) |
 
 ---
 
@@ -27,11 +43,13 @@ This repository contains the production source code for the personal portfolio o
 | Category | Technologies |
 |---|---|
 | **Core Web** | HTML5 (Semantic, SEO-Optimized), Vanilla CSS3, Modern JavaScript (ES6+ Modules) |
-| **Styling & Design** | Custom Design Tokens, CSS Clamp() Responsive Typography, Dark Glassmorphism |
-| **Backend / Serverless** | Node.js (v20+), Vercel Serverless Functions, Nodemailer (v6.10+) |
+| **Backend & Frameworks** | Python, Django, Flask, Node.js (v20+), REST APIs, Vercel Serverless Functions |
+| **Databases** | PostgreSQL, Supabase, PostGIS, SQLite |
+| **Styling & Design** | Custom Design Tokens, CSS Clamp() Responsive Typography, Dark Glassmorphism, UI/UX |
+| **AI / ML & Optimization** | Gemini AI, Google OR-Tools, OpenCV, Leaflet.js, Chart.js, HTMX |
 | **Typography** | Google Fonts ([Outfit](https://fonts.google.com/specimen/Outfit), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)) |
 | **Assets & Media** | WebP format with PNG fallbacks, SVG Icons, Responsive `<picture>` elements |
-| **Hosting & CI/CD** | [Vercel](https://vercel.com/) with automatic continuous deployment |
+| **Hosting & CI/CD** | [Vercel](https://vercel.com/), Render, PythonAnywhere, Git & GitHub Actions |
 
 ---
 
@@ -52,11 +70,22 @@ Deepak_Portfolio/
 │   │   ├── kali-dragon-red.png  # PNG fallback
 │   │   ├── kalilogolinux.png    # Local Kali emblem for intro and favicon
 │   │   └── projects/            # High-resolution project preview screenshots (WebP & PNG)
+│   │       ├── AUGIS Preview.webp
+│   │       ├── AUGIS Preview.png
+│   │       ├── FestivalFlow AI Preview.webp
+│   │       ├── FestivalFlow AI Preview.png
 │   │       ├── Connecting Social Problems.webp
-│   │       ├── NIET Student Election Preview.webp
+│   │       ├── Connecting Social Problems.png
+│   │       ├── TVK Ward 19 Portal Preview.webp
+│   │       ├── TVK Ward 19 Portal Preview.png
 │   │       ├── Offline Exam Portal Preview.webp
+│   │       ├── Offline Exam Portal Preview.png
+│   │       ├── NIET Student Election Preview.webp
+│   │       ├── NIET Student Election Preview.png
 │   │       ├── SmartCampus Preview.webp
-│   │       └── TVK Ward 19 Portal Preview.webp
+│   │       ├── SmartCampus Preview.png
+│   │       ├── Academic Projects Preview.webp
+│   │       └── Academic Projects Preview.png
 │   └── certificates/            # Verified training & hackathon certification PDFs
 ├── api/
 │   └── contact.js               # Hardened, rate-limited Vercel serverless contact endpoint

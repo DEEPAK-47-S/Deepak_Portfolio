@@ -6,9 +6,9 @@
     
     <!-- Primary Page Metadata -->
     <title>S. DEEPAKUMAR | Cyber Security & Full Stack Software Engineer</title>
-    <meta name="description" content="Portfolio of S. Deepakumar — Computer Science and Engineering student (CGPA: 8.5) at Nehru Institute of Engineering and Technology. Building secure digital solutions, full-stack web applications, Python/Flask backends, and responsive user interfaces.">
+    <meta name="description" content="Portfolio of S. Deepakumar — Computer Science and Engineering student (CGPA: 8.5) at Nehru Institute of Engineering and Technology. Building secure digital solutions, full-stack web applications, Python/Django/Flask backends, and responsive user interfaces.">
     <meta name="author" content="S. Deepakumar">
-    <meta name="keywords" content="S. Deepakumar, Deepak, Portfolio, Cyber Security, Software Engineer, Full Stack Developer, Python, Flask, PostgreSQL, Supabase, Coimbatore">
+    <meta name="keywords" content="S. Deepakumar, Deepak, Portfolio, Cyber Security, Software Engineer, Full Stack Developer, Python, Django, Flask, PostgreSQL, Supabase, Coimbatore">
     <link rel="canonical" href="https://deepakumar-portfolio.vercel.app/">
     
     <!-- Open Graph / Facebook -->
@@ -87,7 +87,7 @@
                     <span>🛡️</span> Cyber Security & Software Engineering
                 </div>
                 <h1 class="hero-title">Engineering <span class="text-secure">Secure</span> <span class="text-digital">Digital</span> Solutions.</h1>
-                <p class="hero-desc">Computer Science and Engineering student (2nd Year, CGPA: 8.5) at Nehru Institute of Engineering and Technology. Hands-on experience developing web applications, Python & Flask backends, PostgreSQL/Supabase databases, responsive interfaces, and UI-focused projects. Seeking internship opportunities in software development, full-stack, or UI/UX.</p>
+                <p class="hero-desc">Computer Science and Engineering student (2nd Year, CGPA: 8.5) at Nehru Institute of Engineering and Technology developing web applications with Python, Flask, Django, JavaScript, and SQL. Project work covers institution grievance intelligence (AICTE prototype), citizen reporting, transit planning, and student platforms. Seeking software development or full-stack internship opportunities to learn through practical work.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#certificates" class="btn btn-secondary">My Certificates</a>
@@ -138,7 +138,7 @@
                     
                     <h3>Professional Summary</h3>
                     <div class="card">
-                        <p class="text-lead">Computer Science and Engineering student with hands-on experience developing full-stack web applications, Python/Flask backends, database-driven systems, and responsive interfaces. Project work includes AI-assisted transit-demand planning, student elections, campus management, offline examinations, and citizen grievance platforms. Interested in cybersecurity and software development, with programming experience in Python, JavaScript, and SQL and familiarity with Git, GitHub, and Postman.</p>
+                        <p class="text-lead">Computer Science and Engineering student developing web applications with Python, Flask, Django, JavaScript and SQL. Project work covers institution complaint tracking, citizen reporting, transit planning and student platforms. Comfortable building responsive interfaces, connecting databases and working with Git and Postman. Seeking a software development or full-stack internship with opportunities to learn through practical work.</p>
                     </div>
                 </div>
 
@@ -163,14 +163,15 @@
                                 <span class="skill-tag">CSS3</span>
                                 <span class="skill-tag">JavaScript</span>
                                 <span class="skill-tag">Responsive Web Design</span>
+                                <span class="skill-tag">UI/UX Basics</span>
                             </div>
                         </div>
 
                         <div class="skill-group">
                             <h4 class="skill-group-title">Backend & APIs</h4>
                             <div class="skills-wrap">
-                                <span class="skill-tag">Python</span>
                                 <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">Django</span>
                                 <span class="skill-tag">REST API Concepts</span>
                             </div>
                         </div>
@@ -202,7 +203,6 @@
                                 <span class="skill-tag">Object-Oriented Programming</span>
                                 <span class="skill-tag">Data Structures</span>
                                 <span class="skill-tag">Debugging</span>
-                                <span class="skill-tag">UI/UX Basics</span>
                             </div>
                         </div>
                     </div>
@@ -218,16 +218,37 @@
             </div>
             <div class="projects-grid">
 
-                <!-- Project Block 1: FestivalFlow AI -->
+                <!-- Project Block 1: AUGIS (AICTE Unified Grievance Intelligence System) -->
                 <div id="project-block-1" class="project-card cyber-card reveal delay-05">
                     <div class="project-img-container">
-                        <div class="project-img-placeholder">
-                            <div>
-                                <div class="placeholder-icon">🤖 🚍</div>
-                                <strong class="placeholder-title">FestivalFlow AI</strong>
-                                <div class="placeholder-subtitle">Smart Population & Transit Engine</div>
-                            </div>
-                        </div>
+                        <picture>
+                            <source srcset="assets/images/projects/AUGIS Preview.webp" type="image/webp">
+                            <img src="assets/images/projects/AUGIS Preview.png" alt="AUGIS AICTE Unified Grievance Intelligence System Preview" width="600" height="338" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">HTMX</span>
+                        <span class="tech-badge">Chart.js</span>
+                        <span class="tech-badge">Gemini AI</span>
+                    </div>
+                    <h3 class="project-title">AUGIS – AICTE Unified Grievance Intelligence System</h3>
+                    <p class="project-desc">An AICTE problem-statement prototype for tracking institution-related complaints across bureaus and cells. Features centralized case histories, bureau-wise status tracking, overlap alerts, and Gemini AI-assisted grievance scrutiny to support rapid institutional coordination.</p>
+                    <div class="project-links">
+                        <a href="https://college-complaints.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
+                        <a href="https://github.com/DEEPAK-47-S/College-Complaints" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project Block 2: FestivalFlow AI -->
+                <div id="project-block-2" class="project-card cyber-card reveal delay-10">
+                    <div class="project-img-container">
+                        <picture>
+                            <source srcset="assets/images/projects/FestivalFlow AI Preview.webp" type="image/webp">
+                            <img src="assets/images/projects/FestivalFlow AI Preview.png" alt="FestivalFlow AI Smart Population and Transit Engine Preview" width="600" height="338" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                     <div class="project-tags">
                         <span class="tech-badge">Python</span>
@@ -235,17 +256,85 @@
                         <span class="tech-badge">Leaflet.js</span>
                         <span class="tech-badge">PostGIS</span>
                         <span class="tech-badge">Google OR-Tools</span>
+                        <span class="tech-badge">AI/ML</span>
                     </div>
                     <h3 class="project-title">FestivalFlow AI – Smart Population & Transit Engine</h3>
-                    <p class="project-desc">An AI-assisted transit-demand planning project concept focused on forecasting festival-related crowd surges across Tamil Nadu and supporting more balanced bus-resource allocation between high-demand and low-demand hubs. Designed with map-based monitoring and fleet optimization workflows.</p>
+                    <p class="project-desc">A transit-planning project concept for anticipating festival-related passenger demand in Tamil Nadu. Outlines demand forecasting, map-based monitoring, and fleet allocation approaches using Google OR-Tools for high-demand bus hubs.</p>
                     <div class="project-links">
-                        <a href="https://sakthi-hackton-2026.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
+                        <a href="https://sakthi-hackton-2026.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S/Sakthi_Hackton_2026" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
                     </div>
                 </div>
 
-                <!-- Project Block 2: NIET Student Election -->
-                <div id="project-block-2" class="project-card cyber-card reveal delay-10">
+                <!-- Project Block 3: Connecting Social Problems -->
+                <div id="project-block-3" class="project-card cyber-card reveal delay-15">
+                    <div class="project-img-container">
+                        <picture>
+                            <source srcset="assets/images/projects/Connecting Social Problems.webp" type="image/webp">
+                            <img src="assets/images/projects/Connecting Social Problems.png" alt="Connecting Social Problems Platform Preview" width="600" height="338" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">PostgreSQL/Supabase</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
+                    <h3 class="project-title">Connecting Social Problem – Citizen Grievance Hub</h3>
+                    <p class="project-desc">A citizen reporting platform built to submit and explore community issues through structured digital reports. Grouped reports under roads, water, sanitation, agriculture, environment, and public safety.</p>
+                    <div class="project-links">
+                        <a href="https://connecting-social-problems-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
+                        <a href="https://github.com/DEEPAK-47-S/Connecting-Social-Problems" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project Block 4: TVK CBE North Ward 19 -->
+                <div id="project-block-4" class="project-card cyber-card reveal delay-20">
+                    <div class="project-img-container">
+                        <picture>
+                            <source srcset="assets/images/projects/TVK Ward 19 Portal Preview.webp" type="image/webp">
+                            <img src="assets/images/projects/TVK Ward 19 Portal Preview.png" alt="TVK Ward 19 Portal Preview" width="600" height="338" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python Flask</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">Supabase/PostgreSQL</span>
+                        <span class="tech-badge">Render</span>
+                    </div>
+                    <h3 class="project-title">TVK CBE North Ward 19 – Complaint Portal</h3>
+                    <p class="project-desc">Designed the ward complaint interface for submissions and complaint-status tracking. Included location and contact fields, optional image uploads, complaint tracking codes, and progress updates.</p>
+                    <div class="project-links">
+                        <a href="https://tvk-cbe-ward19.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
+                        <a href="https://github.com/DEEPAK-47-S/TVK" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project Block 5: Smart Exam Portal for Students -->
+                <div id="project-block-5" class="project-card cyber-card reveal delay-25">
+                    <div class="project-img-container">
+                        <picture>
+                            <source srcset="assets/images/projects/Offline Exam Portal Preview.webp" type="image/webp">
+                            <img src="assets/images/projects/Offline Exam Portal Preview.png" alt="Offline Exam Portal Preview" width="600" height="338" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tech-badge">Python Flask</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">HTML/CSS/JS</span>
+                        <span class="tech-badge">Offline LAN Lab</span>
+                    </div>
+                    <h3 class="project-title">Smart Exam Portal for Students (Offline Lab)</h3>
+                    <p class="project-desc">Developed an offline coding examination portal with separate teacher and student workflows. Included question management, student coding workspace, and local submission tracking for supervised assessments.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/DEEPAK-47-S/Offline-Exam-Portal" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">GitHub Repository</a>
+                    </div>
+                </div>
+
+                <!-- Project Block 6: NIET Student Election -->
+                <div id="project-block-6" class="project-card cyber-card reveal delay-30">
                     <div class="project-img-container">
                         <picture>
                             <source srcset="assets/images/projects/NIET Student Election Preview.webp" type="image/webp">
@@ -258,15 +347,15 @@
                         <span class="tech-badge">HTML/CSS/JS</span>
                     </div>
                     <h3 class="project-title">NIET Student Election – Online Voting System</h3>
-                    <p class="project-desc">Web-based student election system with separate voter and admin workflows, one-voter-one-vote validation, duplicate vote prevention, candidate management, photo uploads, live result refresh, vote percentage display, and CSV exports.</p>
+                    <p class="project-desc">Developed separate voter and administrator workflows, including registration and candidate management. Added duplicate-vote prevention, real-time result views, vote percentages, and CSV export.</p>
                     <div class="project-links">
                         <a href="https://deepakumar.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S/Online-Voting" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
                     </div>
                 </div>
 
-                <!-- Project Block 3: SmartCampus -->
-                <div id="project-block-3" class="project-card cyber-card reveal delay-15">
+                <!-- Project Block 7: SmartCampus -->
+                <div id="project-block-7" class="project-card cyber-card reveal delay-35">
                     <div class="project-img-container">
                         <picture>
                             <source srcset="assets/images/projects/SmartCampus Preview.webp" type="image/webp">
@@ -276,96 +365,33 @@
                     <div class="project-tags">
                         <span class="tech-badge">Web Application</span>
                         <span class="tech-badge">Role-Based Access</span>
+                        <span class="tech-badge">Campus Management</span>
                         <span class="tech-badge">Vercel</span>
                     </div>
                     <h3 class="project-title">SmartCampus – Campus Management & ERP Platform</h3>
-                    <p class="project-desc">Unified campus management platform with role-based access for admins, students, faculty, HODs, mentors, and placement staff. Centralized interface for managing college activities, user roles, and authentication flows.</p>
+                    <p class="project-desc">Built a centralized campus management interface with separate workflows for students, faculty, and administrators. Supports unified college activity tracking, role authorizations, and authenticated access.</p>
                     <div class="project-links">
                         <a href="https://smart-campus-for-colleges.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
                         <a href="https://github.com/DEEPAK-47-S/Smart-Campus-for-Colleges" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
                     </div>
                 </div>
 
-                <!-- Project Block 4: Connecting Social Problems -->
-                <div id="project-block-4" class="project-card cyber-card reveal delay-20">
+                <!-- Project Block 8: Academic AI, Vision & E-Commerce Apps -->
+                <div id="project-block-8" class="project-card cyber-card reveal delay-40">
                     <div class="project-img-container">
                         <picture>
-                            <source srcset="assets/images/projects/Connecting Social Problems.webp" type="image/webp">
-                            <img src="assets/images/projects/Connecting Social Problems.png" alt="Connecting Social Problems Platform Preview" width="600" height="338" loading="lazy" decoding="async">
+                            <source srcset="assets/images/projects/Academic Projects Preview.webp" type="image/webp">
+                            <img src="assets/images/projects/Academic Projects Preview.png" alt="Academic CV & Web Applications Preview" width="600" height="338" loading="lazy" decoding="async">
                         </picture>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">PostgreSQL/Supabase</span>
-                        <span class="tech-badge">Vercel</span>
-                    </div>
-                    <h3 class="project-title">Connecting Social Problem – Citizen Grievance Hub</h3>
-                    <p class="project-desc">Web platform for users to submit and explore local community problems (roads, water, sanitation, environment, public safety) through structured digital reporting and category filtering.</p>
-                    <div class="project-links">
-                        <a href="https://connecting-social-problems-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
-                        <a href="https://github.com/DEEPAK-47-S/Connecting-Social-Problems" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Project Block 5: TVK CBE North Ward 19 -->
-                <div id="project-block-5" class="project-card cyber-card reveal delay-25">
-                    <div class="project-img-container">
-                        <picture>
-                            <source srcset="assets/images/projects/TVK Ward 19 Portal Preview.webp" type="image/webp">
-                            <img src="assets/images/projects/TVK Ward 19 Portal Preview.png" alt="TVK Ward 19 Portal Preview" width="600" height="338" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tech-badge">Python Flask</span>
-                        <span class="tech-badge">Supabase/PostgreSQL</span>
-                        <span class="tech-badge">Render</span>
-                    </div>
-                    <h3 class="project-title">TVK CBE North Ward 19 – Complaint Portal</h3>
-                    <p class="project-desc">Complaint submission and tracking website with location tagging, secure status updates, complaint code generation, and image uploads for local ward residents.</p>
-                    <div class="project-links">
-                        <a href="https://tvk-cbe-ward19.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Live Website</a>
-                        <a href="https://github.com/DEEPAK-47-S/TVK" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Project Block 6: Smart Exam Portal for Students -->
-                <div id="project-block-6" class="project-card cyber-card reveal delay-30">
-                    <div class="project-img-container">
-                        <picture>
-                            <source srcset="assets/images/projects/Offline Exam Portal Preview.webp" type="image/webp">
-                            <img src="assets/images/projects/Offline Exam Portal Preview.png" alt="Offline Exam Portal Preview" width="600" height="338" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tech-badge">Python Flask</span>
-                        <span class="tech-badge">SQLite</span>
-                        <span class="tech-badge">LAN Exam System</span>
-                    </div>
-                    <h3 class="project-title">Smart Exam Portal for Students (Offline Lab)</h3>
-                    <p class="project-desc">Offline coding examination system designed for college LAN/local-network environments; intended for supervised offline lab assessments. Features question management, coding workspace, local activity tracking, and browser lockdown controls.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/DEEPAK-47-S/Offline-Exam-Portal" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">GitHub Repository</a>
-                    </div>
-                </div>
-
-                <!-- Project Block 7: Academic AI, Vision & Web Apps -->
-                <div id="project-block-7" class="project-card cyber-card reveal delay-35">
-                    <div class="project-img-container">
-                        <div class="project-img-placeholder">
-                            <div>
-                                <div class="placeholder-icon">👁️ 🛒</div>
-                                <strong class="placeholder-title">Academic CV & Web Apps</strong>
-                                <div class="placeholder-subtitle">Vision Experiments & Interfaces</div>
-                            </div>
-                        </div>
                     </div>
                     <div class="project-tags">
                         <span class="tech-badge">Python</span>
                         <span class="tech-badge">OpenCV / Vision</span>
                         <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">E-Commerce</span>
                     </div>
                     <h3 class="project-title">Academic AI, Vision & E-Commerce Apps</h3>
-                    <p class="project-desc">Includes Motion Object Detection (movement tracking in video/image feeds), Face Expression Detection using computer vision algorithms, and an experimental responsive E-Commerce product portal.</p>
+                    <p class="project-desc">Exploratory academic projects including Motion Object Detection (movement tracking in video/image feeds), Face Expression Detection using computer vision algorithms, and a responsive product-focused E-Commerce website.</p>
                     <div class="project-links">
                         <a href="https://github.com/DEEPAK-47-S" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">View on GitHub</a>
                     </div>
