@@ -457,4 +457,126 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ==========================================================================
+     9. PROJECT CATEGORY FILTERING
+     ========================================================================== */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedFilter = btn.getAttribute('data-filter') || 'all';
+
+        projectCards.forEach(card => {
+          const cardCategories = (card.getAttribute('data-category') || '').split(' ');
+          if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+  }
+
+  /* ==========================================================================
+     10. INTERACTIVE CERTIFICATE MODAL LIGHTBOX
+     ========================================================================== */
+  const certModal = document.getElementById('certModal');
+  const modalImg = document.getElementById('modalCertImg');
+  const modalTitle = document.getElementById('modalCertTitle');
+  const modalViewOriginalBtn = document.getElementById('modalViewOriginalBtn');
+  const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalZoomInBtn = document.getElementById('modalZoomInBtn');
+  const modalZoomOutBtn = document.getElementById('modalZoomOutBtn');
+  const modalZoomResetBtn = document.getElementById('modalZoomResetBtn');
+
+  if (certModal && modalImg) {
+    let currentScale = 1;
+
+    function applyZoom(scale) {
+      currentScale = Math.min(Math.max(scale, 0.5), 2.5);
+      modalImg.style.transform = `scale(${currentScale})`;
+    }
+
+    function openCertModal(title, imgSrc, pdfUrl) {
+      if (modalTitle) modalTitle.textContent = title || 'Certificate Preview';
+      modalImg.src = imgSrc || '';
+      modalImg.alt = title || 'Certificate Preview';
+      modalImg.classList.remove('zoomed');
+      currentScale = 1;
+      modalImg.style.transform = 'scale(1)';
+
+      if (modalViewOriginalBtn) {
+        modalViewOriginalBtn.href = pdfUrl || imgSrc;
+      }
+      if (modalDownloadBtn) {
+        modalDownloadBtn.href = pdfUrl || imgSrc;
+      }
+
+      certModal.classList.add('is-active');
+      document.body.classList.add('menu-open');
+    }
+
+    function closeCertModal() {
+      certModal.classList.remove('is-active');
+      document.body.classList.remove('menu-open');
+      modalImg.src = '';
+      currentScale = 1;
+      modalImg.style.transform = 'scale(1)';
+    }
+
+    // Attach trigger listeners to all view certificate triggers
+    document.querySelectorAll('.view-cert-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const title = trigger.getAttribute('data-cert-title');
+        const imgSrc = trigger.getAttribute('data-cert-img');
+        const pdfUrl = trigger.getAttribute('data-cert-pdf');
+        openCertModal(title, imgSrc, pdfUrl);
+      });
+    });
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeCertModal);
+    }
+
+    certModal.addEventListener('click', (e) => {
+      if (e.target === certModal) {
+        closeCertModal();
+      }
+    });
+
+    // Keyboard support: Escape closes modal
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && certModal.classList.contains('is-active')) {
+        closeCertModal();
+      }
+    });
+
+    // Zoom controls
+    if (modalZoomInBtn) {
+      modalZoomInBtn.addEventListener('click', () => applyZoom(currentScale + 0.25));
+    }
+    if (modalZoomOutBtn) {
+      modalZoomOutBtn.addEventListener('click', () => applyZoom(currentScale - 0.25));
+    }
+    if (modalZoomResetBtn) {
+      modalZoomResetBtn.addEventListener('click', () => applyZoom(1));
+    }
+
+    modalImg.addEventListener('click', () => {
+      if (currentScale === 1) {
+        applyZoom(1.5);
+      } else {
+        applyZoom(1);
+      }
+    });
+  }
 });

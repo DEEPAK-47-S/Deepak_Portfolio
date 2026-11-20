@@ -1,40 +1,50 @@
-# S. Deepakumar — Cyber Security & Software Engineering Portfolio
+# S. Deepakumar — Developer Portfolio
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Demo-deepakumar--portfolio.vercel.app-ef4444?style=for-the-badge&logo=vercel&logoColor=white)](https://deepakumar-portfolio.vercel.app/)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-deepakumar--portfolio.vercel.app-ef4444?style=for-the-badge&logo=vercel&logoColor=white)](https://deepakumar-portfolio.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-DEEPAK--47--S-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DEEPAK-47-S)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Deepakumar%20S-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/deepakumar-s)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 > **"Engineering Secure Digital Solutions."**  
-> A high-performance, responsive personal developer portfolio showcasing full-stack applications, cybersecurity projects, API integrations, and academic achievements.
+> A personal developer portfolio showcasing full-stack web applications, satellite data harmonization platforms, Python backends, competitive hackathon projects, virtual internships, and verified credentials.
 
 ---
 
-## 🌟 Overview & Key Highlights
+## 🌟 Personal Profile & Overview
 
-This repository contains the production source code for the personal portfolio of **S. Deepakumar**, Computer Science & Engineering student at Nehru Institute of Engineering and Technology (Coimbatore, Tamil Nadu) and incoming Cybersecurity Intern at AEX Xenora Technologies.
-
-- **Cyber Aesthetic**: Dark mode UI (`#030305`) accented with glowing crimson hues (`#ef4444`), an interactive Kali Linux dragon 3D chase effect, and hardware-accelerated matrix rain canvas animation.
-- **Ultra-Lightweight & Fast**: Monolithic 2.3 MB HTML refactored down to ~34 KB (98.5% reduction) with externalized CSS, JS, and modern WebP image assets.
-- **Mobile-First & Fully Responsive**: Tested across viewports from 320px ultra-compact mobile up to 1920px Full HD desktop, including dynamic safe-area insets and landscape modes.
-- **Accessible (WCAG 2.1 AAA Compliant)**: Full keyboard navigation, visible focus indicators, screen-reader ARIA states, and `prefers-reduced-motion` support.
-- **Hardened Contact API**: Vercel Serverless Function (`api/contact.js`) with server-side validation, anti-spam honeypot, in-memory rate limiting, and Gmail SMTP integration.
-- **100% Resume Synchronized**: Complete alignment with official resume projects, including AUGIS (AICTE Problem-Statement Prototype), FestivalFlow AI (Sakthi Hackfest '26), Connecting Social Problems, TVK Ward 19, Offline Exam Portal, NIET Online Voting, and SmartCampus ERP.
+- **Name**: S. Deepakumar
+- **Role**: Computer Science and Engineering Student | Full Stack Developer | UI/UX Enthusiast
+- **Institution**: Nehru Institute of Engineering and Technology, Coimbatore, Tamil Nadu, India
+- **Degree**: B.E. Computer Science and Engineering (2nd Year | 2025–Present)
+- **Academic Standing**: CGPA: 8.5 / 10
+- **Introduction**:
+  > *"I'm a Computer Science and Engineering student passionate about building practical web applications, solving real-world problems, and exploring modern software technologies. I work across frontend and backend development, with an interest in UI/UX, AI-assisted applications, and data-driven solutions."*
 
 ---
 
-## 💻 Featured Projects Portfolio
+## 🎨 Visual Identity & Key Features
 
-| Project | Technologies | Key Highlights | Links |
-|---|---|---|---|
-| **AUGIS** (AICTE Grievance Intelligence) | Python, Django, PostgreSQL, HTMX, Chart.js, Gemini AI | Centralized institution-related complaint tracking, bureau-wise status synchronization, overlap alerts, and Gemini AI-assisted grievance scrutiny. | [Live Demo](https://college-complaints.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/College-Complaints) |
-| **FestivalFlow AI** (Smart Transit Engine) | Python, Flask, JavaScript, Leaflet.js, PostGIS, OR-Tools | AI-assisted transit-demand planning, festival passenger surge forecasting across Tamil Nadu hubs, and fleet optimization. | [Live Demo](https://sakthi-hackton-2026.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Sakthi_Hackton_2026) |
-| **Connecting Social Problem** | React, JavaScript, HTML, CSS, Supabase / PostgreSQL | Citizen grievance and reporting platform categorized under roads, water, sanitation, agriculture, and public safety. | [Live Demo](https://connecting-social-problems-web.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Connecting-Social-Problems) |
-| **TVK CBE North Ward 19** | Python Flask, Supabase / PostgreSQL, JavaScript, Render | Ward complaint submission and tracking portal with geo-location fields, complaint reference codes, and status progress. | [Live Demo](https://tvk-cbe-ward19.onrender.com/) • [GitHub](https://github.com/DEEPAK-47-S/TVK) |
-| **Smart Exam Portal for Students** | Python Flask, SQLite, HTML5, CSS3, JavaScript | Offline LAN examination portal with separate teacher/student workflows, question management, and local submission tracking. | [GitHub](https://github.com/DEEPAK-47-S/Offline-Exam-Portal) |
-| **NIET Student Election** | Python Flask, SQLite, HTML5, CSS3, JavaScript | Web-based student election system with voter registration, candidate photo management, duplicate prevention, and CSV export. | [Live Demo](https://deepakumar.pythonanywhere.com/) • [GitHub](https://github.com/DEEPAK-47-S/Online-Voting) |
-| **SmartCampus ERP Platform** | Web Application, Role-Based Access, Vercel | Centralized campus management interface with distinct workflows for students, faculty, and administrators. | [Live Demo](https://smart-campus-for-colleges.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Smart-Campus-for-Colleges) |
-| **Academic AI & Vision Experiments** | Python, OpenCV, Computer Vision, HTML/CSS | Motion object detection, real-time facial expression analysis, and responsive e-commerce storefront portal. | [GitHub](https://github.com/DEEPAK-47-S) |
+- **Dark Cyber Aesthetic**: Dark theme (`#030305`) accented with crimson red accents (`#ef4444`), an interactive Kali dragon chase effect, and a hardware-accelerated matrix canvas rain animation.
+- **Dynamic Project Filtering**: Filter projects by categories: **All**, **Full Stack**, **AI / Data**, **Web Applications**, and **Academic Projects**.
+- **Interactive Certificate Lightbox**: Modal viewer with image zoom in/out, keyboard Escape-to-close, full-screen PDF view in new tab, and direct document downloads.
+- **Responsive Architecture**: Multi-breakpoint layout tested across mobile (320px, 375px), tablet (768px), and modern desktop screens.
+- **Contact API & Honeypot**: Serverless contact submission (`api/contact.js`) with input validation, sliding-window rate limiting, and email client fallback.
+
+---
+
+## 💻 Projects Portfolio
+
+| Project | Category | Technologies | Description & Highlights | Links |
+|---|---|---|---|---|
+| **FirePulse** | AI / Data • Full Stack | React, TypeScript, Vite, Python, Flask, NASA FIRMS, Leaflet, Recharts | Harmonization of MODIS and VIIRS satellite hotspot observations on a 1-km equal-area grid for NASA Space Apps Challenge 2026. Features interactive fire map, historical burning calendar, and anomaly trend analytics. | [GitHub](https://github.com/DEEPAK-47-S/Harmonization-of-MODIS-and-VIIRS-Hot-Spots) |
+| **AUGIS** | Full Stack • AI / Data • Web | Python, Django, PostgreSQL, Bootstrap, HTMX, Chart.js, Gemini AI | An institution-related complaint tracking prototype built around an AICTE problem statement. Centralized grievance histories, bureau-wise status tracking, overlap alerts, and Gemini AI-assisted scrutiny. | [Live Demo](https://college-complaints.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/College-Complaints) |
+| **FestivalFlow AI** | AI / Data • Web | Python, Flask, JavaScript, Leaflet.js, PostgreSQL/PostGIS, Google OR-Tools | Transit-planning project concept for anticipating festival passenger demand in Tamil Nadu (Sakthi Hackfest '26). Map-based terminal monitoring and vehicle fleet balancing. | [Live Demo](https://sakthi-hackton-2026.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Sakthi_Hackton_2026) |
+| **Connecting Social Problem** | Full Stack • Web | React, JavaScript, HTML, CSS, Supabase, PostgreSQL, Vercel | Citizen reporting platform enabling users to submit and explore local community issues through structured digital reports categorized under roads, water, sanitation, and safety. | [Live Demo](https://connecting-social-problems-web.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Connecting-Social-Problems) |
+| **TVK CBE North Ward 19** | Full Stack • Web | Python Flask, JavaScript, HTML/CSS, Supabase, PostgreSQL, Render | Ward-level complaint portal with geo-location fields, optional image attachments, tracking codes, and status progress updates. | [Live Demo](https://tvk-cbe-ward19.onrender.com/) • [GitHub](https://github.com/DEEPAK-47-S/TVK) |
+| **Smart Exam Portal for Students** | Web Applications | Python Flask, SQLite, HTML5, CSS3, JavaScript | Offline/LAN examination management system with teacher and student workflows, question management, student coding workspace, and local submission tracking. | [GitHub](https://github.com/DEEPAK-47-S/Smart-Exam-Portal-For-Students) |
+| **NIET Student Election** | Web Applications | Python Flask, SQLite, HTML5, CSS3, JavaScript | Web-based student election system with voter registration, candidate photo management, duplicate prevention, and CSV election report exports. | [Live Demo](https://deepakumar.pythonanywhere.com/) • [GitHub](https://github.com/DEEPAK-47-S/Online-Voting) |
+| **SmartCampus** | Full Stack • Web | Web Application, Role-Based Access, Campus Management, Vercel | Centralized campus management interface with distinct workflows for students, faculty, and administrators. | [Live Demo](https://smart-campus-for-colleges.vercel.app/) • [GitHub](https://github.com/DEEPAK-47-S/Smart-Campus-for-Colleges) |
+| **Academic AI & Computer Vision** | Academic • AI | Python, OpenCV, Computer Vision, HTML5, CSS3, JavaScript | Motion Object Detection (movement tracking in video feeds), Face Expression Detection using vision algorithms, and an experimental responsive E-Commerce portal. | [GitHub](https://github.com/DEEPAK-47-S) |
 
 ---
 
@@ -42,59 +52,89 @@ This repository contains the production source code for the personal portfolio o
 
 | Category | Technologies |
 |---|---|
-| **Core Web** | HTML5 (Semantic, SEO-Optimized), Vanilla CSS3, Modern JavaScript (ES6+ Modules) |
-| **Backend & Frameworks** | Python, Django, Flask, Node.js (v20+), REST APIs, Vercel Serverless Functions |
-| **Databases** | PostgreSQL, Supabase, PostGIS, SQLite |
-| **Styling & Design** | Custom Design Tokens, CSS Clamp() Responsive Typography, Dark Glassmorphism, UI/UX |
-| **AI / ML & Optimization** | Gemini AI, Google OR-Tools, OpenCV, Leaflet.js, Chart.js, HTMX |
-| **Typography** | Google Fonts ([Outfit](https://fonts.google.com/specimen/Outfit), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)) |
-| **Assets & Media** | WebP format with PNG fallbacks, SVG Icons, Responsive `<picture>` elements |
-| **Hosting & CI/CD** | [Vercel](https://vercel.com/), Render, PythonAnywhere, Git & GitHub Actions |
+| **Programming Languages** | Python, C, C++, Java, JavaScript, TypeScript, SQL |
+| **Frontend Development** | React, HTML5, CSS3, Tailwind CSS, Bootstrap, Responsive Web Design, UI/UX Design |
+| **Backend & APIs** | Flask, Django, REST API Development, Axios, Postman, Node.js Serverless Functions |
+| **Databases & Storage** | PostgreSQL, SQLite, Supabase, PostGIS |
+| **Tools & Platforms** | Git, GitHub, Vite, React Router, Vercel, Render, PythonAnywhere |
+| **AI, Data & Visualization** | Gemini AI, OpenCV, Leaflet.js, React Leaflet, Chart.js, Recharts, Google OR-Tools |
 
 ---
 
-## 📁 Project Structure
+## 💼 Experience & Hackathons
+
+### Professional & Virtual Internships
+- **EdBytes** — *Full Stack Development Virtual Intern* (October 5 – October 12, 2026)
+  - Completed a project-based virtual internship (ID: `EDB-2611-FSD-0185`).
+  - Successfully delivered 3 evaluated project milestones; achieved **Grade B (85/100)**.
+- **AEX Xenora Technologies** — *Incoming Cybersecurity Intern* (Scheduled / Upcoming Role)
+  - Selected for hands-on cybersecurity exposure in defensive security, vulnerability assessments, and secure code practices.
+
+### Hackathons & Competitions
+- **NASA Space Apps Challenge 2026** (November 14–15, 2026)
+  - Project: *FirePulse — Harmonization of MODIS and VIIRS Hot Spots* (Team Virtual Warriors).
+  - Recognition: Awarded the official **"Galactic Problem Solver"** certificate of recognition for participation and efforts to address Earth observation challenges.
+- **SAKTHI HACKFEST '26** (October 10–11, 2026)
+  - Project: *FestivalFlow AI — Smart Population & Transit Engine* (Generative AI Domain).
+  - Recognition: 24-Hour State-Level Hackathon Certificate of Participation from Sree Sakthi Engineering College.
+
+---
+
+## 📜 Verified Certificates Directory
+
+All certificates are scanned directly from the `assets/certificates/` directory with generated previews in `assets/images/certificates/`:
+
+1. **NASA Space Apps Challenge 2026** — *Galactic Problem Solver Certificate* (`NASA Space Apps Challenge_hackton_cirtificate.pdf`)
+2. **EdBytes Virtual Internship** — *Full Stack Development Certificate (Grade B · 85/100)* (`EdBytes-FSD_Internship_Certificate-EDB-2611-FSD-0185.pdf`)
+3. **SAKTHI HACKFEST '26** — *24-Hour Hackathon Certificate of Participation* (`Sakthi Hackfest 2026 Certificate.png`)
+4. **NoviTech MasterClass** — *30 Days in Full Stack Development* (`Deepakumar Full Stack Development Certificate.pdf`)
+5. **NoviTech MasterClass** — *30 Days in Artificial Intelligence* (`Deepakumar Artificial Intelligence.pdf`)
+6. **NoviTech MasterClass** — *30 Days in UI/UX Design* (`Deepakumar UI UX Design.pdf`)
+7. **NoviTech Bootcamp** — *Events in JavaScript* (`Deepakumar Frontend Bootcamp Event in JavaScript.pdf`)
+8. **NoviTech Webinar** — *API Working + Postman Introduction* (`Deepakumar API Working + Postman Introduction.pdf`)
+9. **NoviTech Skill Camp** — *From Click to Hack: How Cyber Attacks Happen* (`Deepakumar From Click to Hack _ How Cyber Attacks Happends.pdf`)
+10. **NoviTech Skill Camp** — *AI-Driven IT Sectors* (`Deepakumar AI Driven IT Sectors.pdf`)
+11. **Tech Drew Workshop** — *2-Hour ATS Resume Optimization Workshop* (`Deepakumar ATS Resume Optimization Workshop.pdf`)
+12. **NoviTech Webinar** — *UI/UX Design Webinar* (`Deepakumar UI UX webinar.pdf`)
+
+---
+
+## 📁 Repository Structure
 
 ```text
 Deepak_Portfolio/
-├── index.html                   # Primary semantic, accessible single-page layout
+├── index.html                   # Primary single-page portfolio layout
 ├── assets/
 │   ├── css/
-│   │   └── style.css            # Modular design system, keyframes & responsive queries
+│   │   └── style.css            # Dark cyber design system, modal & responsive queries
 │   ├── js/
-│   │   └── main.js              # Core UI interactions, Matrix RAF canvas, and form AJAX
+│   │   └── main.js              # UI animations, project filter, and certificate lightbox modal
 │   ├── images/
-│   │   ├── Deepak.webp          # Optimized hero profile photo (WebP, ~99 KB)
+│   │   ├── Deepak.webp          # Hero profile photo (WebP format)
 │   │   ├── Deepak.png           # Lossless PNG fallback
-│   │   ├── kali-dragon-red.webp # Optimized Kali dragon background asset (~22 KB)
+│   │   ├── kali-dragon-red.webp # Kali dragon background asset (WebP format)
 │   │   ├── kali-dragon-red.png  # PNG fallback
 │   │   ├── kalilogolinux.png    # Local Kali emblem for intro and favicon
-│   │   └── projects/            # High-resolution project preview screenshots (WebP & PNG)
-│   │       ├── AUGIS Preview.webp
-│   │       ├── AUGIS Preview.png
-│   │       ├── FestivalFlow AI Preview.webp
-│   │       ├── FestivalFlow AI Preview.png
-│   │       ├── Connecting Social Problems.webp
-│   │       ├── Connecting Social Problems.png
-│   │       ├── TVK Ward 19 Portal Preview.webp
-│   │       ├── TVK Ward 19 Portal Preview.png
-│   │       ├── Offline Exam Portal Preview.webp
-│   │       ├── Offline Exam Portal Preview.png
-│   │       ├── NIET Student Election Preview.webp
-│   │       ├── NIET Student Election Preview.png
-│   │       ├── SmartCampus Preview.webp
-│   │       ├── SmartCampus Preview.png
-│   │       ├── Academic Projects Preview.webp
-│   │       └── Academic Projects Preview.png
-│   └── certificates/            # Verified training & hackathon certification PDFs
+│   │   ├── projects/            # High-resolution project preview screenshots & banners
+│   │   │   ├── FirePulse Preview.webp / .png
+│   │   │   ├── AUGIS Preview.webp / .png
+│   │   │   ├── FestivalFlow AI Preview.webp / .png
+│   │   │   ├── Connecting Social Problems.webp / .png
+│   │   │   ├── TVK Ward 19 Portal Preview.webp / .png
+│   │   │   ├── Offline Exam Portal Preview.webp / .png
+│   │   │   ├── NIET Student Election Preview.webp / .png
+│   │   │   ├── SmartCampus Preview.webp / .png
+│   │   │   └── Academic Projects Preview.webp / .png
+│   │   └── certificates/        # High-resolution rendered certificate thumbnail images
+│   └── certificates/            # Verified official certificate PDF documents
 ├── api/
-│   └── contact.js               # Hardened, rate-limited Vercel serverless contact endpoint
+│   └── contact.js               # Rate-limited Vercel serverless contact function
 ├── resume/
-│   └── S_Deepakumar_Resume.pdf  # Verified official resume PDF
+│   └── DEEPAKUMAR_S_Resume.pdf  # Verified official resume PDF (November 2026)
 ├── .env.example                 # Template for Vercel environment variables
 ├── .gitignore                   # Production repository exclusions
 ├── package.json                 # Project dependencies & scripts
-└── README.md                    # Comprehensive technical documentation
+└── README.md                    # Technical documentation
 ```
 
 ---
@@ -121,7 +161,7 @@ npm install
 
 ### 3. Start a Local Development Server
 
-Run a simple local server using Python or any static file server:
+Run a simple local server using Python or Node.js:
 
 ```bash
 # Using Python 3
@@ -135,70 +175,10 @@ Open `http://localhost:3000` in your browser.
 
 ---
 
-## 📧 Contact API & Vercel Configuration
-
-The contact form sends direct email notifications to `skdeepakumar000@gmail.com` using Nodemailer and Gmail SMTP through a Vercel Serverless Function.
-
-### Step 1: Generate a Google App Password
-
-1. Sign in to your Google Account: `skdeepakumar000@gmail.com`
-2. Navigate to [Google Account Security](https://myaccount.google.com/security)
-3. Ensure **2-Step Verification** is turned ON.
-4. Search for or navigate to [App Passwords](https://myaccount.google.com/apppasswords).
-5. Create an App Password with the name **"Portfolio Website"**.
-6. Copy the generated 16-character code (e.g., `abcd efgh ijkl mnop`).
-
-### Step 2: Configure Environment Variables in Vercel
-
-In your Vercel Dashboard:
-1. Open your project settings: **Settings** &rarr; **Environment Variables**.
-2. Add the following variables:
-
-| Variable Name | Value | Purpose |
-|---|---|---|
-| `EMAIL_USER` | `skdeepakumar000@gmail.com` | Authenticated sender Gmail address |
-| `EMAIL_PASS` | `your_16_char_app_password` | Google 16-character App Password (no spaces) |
-
-3. Trigger a redeployment in Vercel to apply the new environment variables.
-
----
-
-## 🧪 Testing & Validation
-
-### Contact Form Validation Suite
-
-Run the automated endpoint unit tests locally:
-
-```bash
-node scratch/test_contact_api.js
-```
-
-Tests include:
-- HTTP method restriction (405 on non-POST)
-- Input type checking and email format validation (RFC 5322)
-- Input length boundaries (name 2–100 chars, message 5–3000 chars)
-- Anti-spam honeypot bot trap
-- In-memory sliding window rate limiting (max 5 requests per 15 min per IP)
-- Safe error fallback (503 when SMTP environment variables are unconfigured)
-
----
-
-## 📱 Mobile Responsiveness Breakdown
-
-| Device Category | Target Viewport | Validation Details |
-|---|---|---|
-| **Ultra-Small Mobile** | `320px` – `360px` | No horizontal scroll, full-width fluid buttons, compact profile card (`180px`), safe padding (`0.75rem`). |
-| **Standard Mobile** | `375px` – `430px` | Smooth hamburger navigation, 2-column wrapped CTA buttons, responsive typography with `clamp()`. |
-| **Tablet** | `768px` | 2-column project cards, balanced resume split, touch-friendly navigation drawer. |
-| **Laptop & Desktop** | `1024px` – `1440px` | Sticky glassmorphic navbar, interactive Kali dragon chase, multi-column grids. |
-| **Full HD / 4K** | `1920px+` | Constrained 1200px container for optimal reading ergonomics. |
-
----
-
-## 👤 Author & Connect
+## 📧 Contact & Connect
 
 **S. Deepakumar**  
-*Computer Science and Engineering Student & Cyber Security Enthusiast*  
+*Computer Science and Engineering Student & Full Stack Developer*  
 Nehru Institute of Engineering and Technology, Coimbatore, Tamil Nadu, India.
 
 - 🌐 **Portfolio**: [deepakumar-portfolio.vercel.app](https://deepakumar-portfolio.vercel.app/)
@@ -212,4 +192,4 @@ Nehru Institute of Engineering and Technology, Coimbatore, Tamil Nadu, India.
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE) — feel free to use it for personal inspiration.
+This project is licensed under the [MIT License](LICENSE).
