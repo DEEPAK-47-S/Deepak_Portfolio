@@ -156,18 +156,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. KALI DRAGON BACKGROUND & INTERACTIVE TRACKING
+     4. KALI DRAGON BACKGROUND & HIGH-VELOCITY AGGRESSIVE PREDATOR TRACKING
      ========================================================================== */
   const dragonContainer = document.getElementById('kali-dragon');
-  if (dragonContainer && !prefersReducedMotion && window.innerWidth > 600) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
+  if (dragonContainer && !prefersReducedMotion) {
+    let pointerX = window.innerWidth / 2;
+    let pointerY = window.innerHeight / 2;
     let currentX = window.innerWidth / 2;
     let currentY = window.innerHeight / 2;
-    let randomTargetX = currentX;
-    let randomTargetY = currentY;
-    let isMouseActive = false;
+    let huntTargetX = currentX;
+    let huntTargetY = currentY;
+    let prevX = currentX;
+    let prevY = currentY;
+    let isTrackingActive = false;
     let idleTimer = null;
+    let lastDashTime = 0;
+    let currentDashDuration = 750;
     let initialEmerged = false;
 
     function getProfileCenter() {
@@ -185,69 +189,139 @@ document.addEventListener('DOMContentLoaded', () => {
     const initCenter = getProfileCenter();
     currentX = initCenter.x;
     currentY = initCenter.y;
-    randomTargetX = currentX;
-    randomTargetY = currentY;
+    huntTargetX = currentX;
+    huntTargetY = currentY;
+    prevX = currentX;
+    prevY = currentY;
 
-    dragonContainer.style.transition = 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
-    dragonContainer.style.transform = `translate3d(${currentX - window.innerWidth / 2}px, ${currentY - window.innerHeight / 2}px, 0) scale(0.65)`;
+    // Swift emergence right after intro
+    dragonContainer.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease';
+    dragonContainer.style.transform = `translate3d(${currentX - window.innerWidth / 2}px, ${currentY - window.innerHeight / 2}px, 0) scale(0.7)`;
 
     setTimeout(() => {
       initialEmerged = true;
       if (dragonContainer) dragonContainer.style.transition = 'none';
-      setNewRandomTarget();
-    }, 3600);
+      pickAggressiveHuntTarget();
+    }, 1100);
 
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      isMouseActive = true;
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        isMouseActive = false;
-        setNewRandomTarget();
-      }, 1500);
-    }, { passive: true });
+    function pickAggressiveHuntTarget() {
+      const marginX = Math.max(20, window.innerWidth * 0.12);
+      const marginY = Math.max(30, window.innerHeight * 0.14);
+      
+      // Dramatic wide lunges and tactical ambush sweeps
+      const isLeft = Math.random() < 0.5;
+      const isTop = Math.random() < 0.5;
 
-    function setNewRandomTarget() {
-      const marginX = window.innerWidth * 0.2;
-      const marginY = window.innerHeight * 0.2;
-      randomTargetX = marginX + Math.random() * (window.innerWidth - marginX * 2);
-      randomTargetY = marginY + Math.random() * (window.innerHeight - marginY * 2);
+      huntTargetX = isLeft 
+        ? marginX + Math.random() * (window.innerWidth * 0.38)
+        : window.innerWidth - marginX - Math.random() * (window.innerWidth * 0.38);
+
+      huntTargetY = isTop
+        ? marginY + Math.random() * (window.innerHeight * 0.38)
+        : window.innerHeight - marginY - Math.random() * (window.innerHeight * 0.38);
+
+      lastDashTime = performance.now();
+      currentDashDuration = 600 + Math.random() * 800; // Fierce dashes every 600-1400ms
     }
 
-    function animateDragon() {
-      if (initialEmerged && !document.hidden) {
-        const targetX = isMouseActive ? mouseX : randomTargetX;
-        const targetY = isMouseActive ? mouseY : randomTargetY;
-        const speed = isMouseActive ? 0.015 : 0.005;
+    function onPointerActive(x, y) {
+      pointerX = x;
+      pointerY = y;
+      isTrackingActive = true;
+      clearTimeout(idleTimer);
+      // Fast switchback to autonomous aggressive predator mode if pointer stops for 700ms
+      idleTimer = setTimeout(() => {
+        isTrackingActive = false;
+        pickAggressiveHuntTarget();
+      }, 700);
+    }
 
-        currentX += (targetX - currentX) * speed;
-        currentY += (targetY - currentY) * speed;
+    // High-responsiveness desktop mouse tracking
+    window.addEventListener('mousemove', (e) => {
+      onPointerActive(e.clientX, e.clientY);
+    }, { passive: true });
 
-        if (!isMouseActive && Math.abs(targetX - currentX) < 10 && Math.abs(targetY - currentY) < 10) {
-          setNewRandomTarget();
+    // Aggressive mobile touch tracking
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        onPointerActive(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        onPointerActive(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        isTrackingActive = false;
+        pickAggressiveHuntTarget();
+      }, 350);
+    }, { passive: true });
+
+    // Main 60fps Aggressive Predator Engine
+    function animateDragon(now) {
+      if (!document.hidden && initialEmerged) {
+        // In idle / mobile untracked state, initiate aggressive random lunges & feints
+        if (!isTrackingActive) {
+          const timeSinceDash = now - lastDashTime;
+          const distToTarget = Math.hypot(huntTargetX - currentX, huntTargetY - currentY);
+          if (timeSinceDash > currentDashDuration || distToTarget < 30) {
+            pickAggressiveHuntTarget();
+          }
         }
 
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const maxMoveX = window.innerWidth * 0.35;
-        const maxMoveY = window.innerHeight * 0.35;
+        let targetX = isTrackingActive ? pointerX : huntTargetX;
+        let targetY = isTrackingActive ? pointerY : huntTargetY;
 
-        let moveX = Math.max(-maxMoveX, Math.min(maxMoveX, currentX - centerX));
-        let moveY = Math.max(-maxMoveY, Math.min(maxMoveY, currentY - centerY));
+        // When in idle hunting mode, inject continuous predatory twitch and rapid organic cyber flutter
+        if (!isTrackingActive) {
+          const t = now * 0.007;
+          targetX += Math.sin(t * 2.2) * 26 + Math.cos(t * 4.6) * 14;
+          targetY += Math.cos(t * 1.8) * 22 + Math.sin(t * 3.8) * 12;
+        }
 
-        const nX = moveX / (maxMoveX || 1);
-        const nY = moveY / (maxMoveY || 1);
-        const maxRotation = 14;
-        const rotateX = nY * -maxRotation;
-        const rotateY = nX * maxRotation;
+        // Fast & aggressive pursuit lerp speed:
+        // 0.115 for ultra-fast snappy reaction to user cursor/finger!
+        // 0.082 for aggressive predatory dashes when idle/untracked!
+        const lerpFactor = isTrackingActive ? 0.115 : 0.082;
+        const dx = targetX - currentX;
+        const dy = targetY - currentY;
+        currentX += dx * lerpFactor;
+        currentY += dy * lerpFactor;
 
-        dragonContainer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        // Instantaneous physical velocity calculation
+        const vx = currentX - prevX;
+        const vy = currentY - prevY;
+        prevX = currentX;
+        prevY = currentY;
+
+        const speed = Math.hypot(vx, vy);
+
+        // Aggressive 3D Banking, Tilting, and Dynamic Lunge Scale
+        const bankZ = Math.max(-28, Math.min(28, vx * 2.8));
+        const tiltX = Math.max(-25, Math.min(25, -vy * 2.4));
+        const tiltY = Math.max(-25, Math.min(25, vx * 2.4));
+        const lungeScale = 0.95 + Math.min(0.18, speed * 0.022);
+
+        // Strict boundary calculation accounting for scale & banking to guarantee 0px overflow on all screens
+        const effectiveHalfW = ((dragonContainer.offsetWidth || 220) / 2) * 1.18;
+        const effectiveHalfH = ((dragonContainer.offsetHeight || 220) / 2) * 1.18;
+        const maxMoveX = Math.max(8, (window.innerWidth / 2) - effectiveHalfW - 12);
+        const maxMoveY = Math.max(8, (window.innerHeight / 2) - effectiveHalfH - 12);
+
+        const moveX = Math.max(-maxMoveX, Math.min(maxMoveX, currentX - window.innerWidth / 2));
+        const moveY = Math.max(-maxMoveY, Math.min(maxMoveY, currentY - window.innerHeight / 2));
+
+        dragonContainer.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0) rotateX(${tiltX.toFixed(1)}deg) rotateY(${tiltY.toFixed(1)}deg) rotateZ(${bankZ.toFixed(1)}deg) scale(${lungeScale.toFixed(2)})`;
       }
       requestAnimationFrame(animateDragon);
     }
 
-    animateDragon();
+    requestAnimationFrame(animateDragon);
   }
 
   /* ==========================================================================

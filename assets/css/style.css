@@ -186,12 +186,12 @@ img, picture, svg, video {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 520px;
-    height: 520px;
-    margin: -260px 0 0 -260px;
+    width: min(520px, 45vw);
+    height: min(520px, 45vw);
+    margin: min(-260px, -22.5vw) 0 0 min(-260px, -22.5vw);
     z-index: 1;
     pointer-events: none;
-    opacity: 0.99;
+    opacity: 0.98;
     perspective: 1000px;
     transform-style: preserve-3d;
     will-change: transform;
@@ -201,8 +201,8 @@ img, picture, svg, video {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 30px rgba(239, 68, 68, 0.9)) drop-shadow(0 0 60px rgba(239, 68, 68, 0.6));
-    animation: metalDragonShine 6s infinite alternate ease-in-out;
+    filter: drop-shadow(0 0 35px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 70px rgba(239, 68, 68, 0.65));
+    animation: metalDragonShine 3s infinite alternate ease-in-out;
 }
 
 /* ==========================================================================
@@ -1921,16 +1921,19 @@ footer {
     }
 
     #kali-dragon {
-        width: min(240px, 70vw);
-        height: min(240px, 70vw);
+        width: min(230px, 58vw);
+        height: min(230px, 58vw);
         top: 50%;
         left: 50%;
-        margin: 0;
-        transform: translate(-50%, -50%) !important;
+        margin: min(-115px, -29vw) 0 0 min(-115px, -29vw);
         pointer-events: none;
-        max-width: 75vw;
-        max-height: 75vh;
-        overflow: hidden;
+        max-width: 70vw;
+        max-height: 70vh;
+        overflow: visible;
+        opacity: 0.94;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        will-change: transform;
     }
 }
 
@@ -2035,6 +2038,12 @@ footer {
     .profile-card {
         width: min(50vw, 145px);
         border-radius: var(--radius-md);
+    }
+
+    #kali-dragon {
+        width: min(180px, 52vw);
+        height: min(180px, 52vw);
+        margin: min(-90px, -26vw) 0 0 min(-90px, -26vw);
     }
 
     .hero-title {
