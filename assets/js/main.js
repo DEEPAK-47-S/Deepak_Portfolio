@@ -156,24 +156,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. KALI DRAGON BACKGROUND & HIGH-VELOCITY AGGRESSIVE PREDATOR TRACKING
+     4. KALI DRAGON BACKGROUND & FULL 2D/3D SPACE INTERACTIVE TRACKING
      ========================================================================== */
   const dragonContainer = document.getElementById('kali-dragon');
   if (dragonContainer && !prefersReducedMotion) {
-    let pointerX = window.innerWidth / 2;
-    let pointerY = window.innerHeight / 2;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
     let currentX = window.innerWidth / 2;
     let currentY = window.innerHeight / 2;
-    let huntTargetX = currentX;
-    let huntTargetY = currentY;
+    let roamTargetX = currentX;
+    let roamTargetY = currentY;
     let prevX = currentX;
-    let prevY = currentY;
-    let isTrackingActive = false;
+    let isMouseActive = false;
     let idleTimer = null;
-    let lastDashTime = 0;
-    let currentDashDuration = 750;
     let initialEmerged = false;
 
+    // Align dragon initially behind the profile image box
     function getProfileCenter() {
       const profileCard = document.querySelector('.profile-card');
       if (profileCard) {
@@ -189,134 +187,108 @@ document.addEventListener('DOMContentLoaded', () => {
     const initCenter = getProfileCenter();
     currentX = initCenter.x;
     currentY = initCenter.y;
-    huntTargetX = currentX;
-    huntTargetY = currentY;
+    roamTargetX = currentX;
+    roamTargetY = currentY;
     prevX = currentX;
-    prevY = currentY;
 
-    // Swift emergence right after intro
-    dragonContainer.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease';
-    dragonContainer.style.transform = `translate3d(${currentX - window.innerWidth / 2}px, ${currentY - window.innerHeight / 2}px, 0) scale(0.7)`;
+    // Smooth emergence right after intro screen reveal
+    dragonContainer.style.transition = 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease';
+    dragonContainer.style.transform = `translate3d(${currentX - window.innerWidth / 2}px, ${currentY - window.innerHeight / 2}px, 0) scale(0.65)`;
 
     setTimeout(() => {
       initialEmerged = true;
       if (dragonContainer) dragonContainer.style.transition = 'none';
-      pickAggressiveHuntTarget();
-    }, 1100);
+      pickNewRoamTarget();
+    }, 1800);
 
-    function pickAggressiveHuntTarget() {
-      const marginX = Math.max(20, window.innerWidth * 0.12);
-      const marginY = Math.max(30, window.innerHeight * 0.14);
-      
-      // Dramatic wide lunges and tactical ambush sweeps
-      const isLeft = Math.random() < 0.5;
-      const isTop = Math.random() < 0.5;
-
-      huntTargetX = isLeft 
-        ? marginX + Math.random() * (window.innerWidth * 0.38)
-        : window.innerWidth - marginX - Math.random() * (window.innerWidth * 0.38);
-
-      huntTargetY = isTop
-        ? marginY + Math.random() * (window.innerHeight * 0.38)
-        : window.innerHeight - marginY - Math.random() * (window.innerHeight * 0.38);
-
-      lastDashTime = performance.now();
-      currentDashDuration = 600 + Math.random() * 800; // Fierce dashes every 600-1400ms
+    // Pick a smooth wandering target across the full screen space
+    function pickNewRoamTarget() {
+      const marginX = window.innerWidth * 0.12;
+      const marginY = window.innerHeight * 0.12;
+      roamTargetX = marginX + Math.random() * (window.innerWidth - marginX * 2);
+      roamTargetY = marginY + Math.random() * (window.innerHeight - marginY * 2);
     }
 
-    function onPointerActive(x, y) {
-      pointerX = x;
-      pointerY = y;
-      isTrackingActive = true;
+    function onPointerMove(x, y) {
+      mouseX = x;
+      mouseY = y;
+      isMouseActive = true;
       clearTimeout(idleTimer);
-      // Fast switchback to autonomous aggressive predator mode if pointer stops for 700ms
       idleTimer = setTimeout(() => {
-        isTrackingActive = false;
-        pickAggressiveHuntTarget();
-      }, 700);
+        isMouseActive = false;
+        pickNewRoamTarget();
+      }, 1400);
     }
 
-    // High-responsiveness desktop mouse tracking
+    // Follow mouse wherever it goes - up, down, left, right across the entire viewport
     window.addEventListener('mousemove', (e) => {
-      onPointerActive(e.clientX, e.clientY);
+      onPointerMove(e.clientX, e.clientY);
     }, { passive: true });
 
-    // Aggressive mobile touch tracking
+    // Touch support for mobile view
     window.addEventListener('touchstart', (e) => {
       if (e.touches && e.touches[0]) {
-        onPointerActive(e.touches[0].clientX, e.touches[0].clientY);
+        onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
       }
     }, { passive: true });
 
     window.addEventListener('touchmove', (e) => {
       if (e.touches && e.touches[0]) {
-        onPointerActive(e.touches[0].clientX, e.touches[0].clientY);
+        onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
       }
     }, { passive: true });
 
-    window.addEventListener('touchend', () => {
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        isTrackingActive = false;
-        pickAggressiveHuntTarget();
-      }, 350);
-    }, { passive: true });
+    window.addEventListener('mouseleave', () => {
+      isMouseActive = false;
+      pickNewRoamTarget();
+    });
 
-    // Main 60fps Aggressive Predator Engine
-    function animateDragon(now) {
+    // Main 60fps 2D/3D Space Animation Loop
+    function animateDragon(timestamp) {
       if (!document.hidden && initialEmerged) {
-        // In idle / mobile untracked state, initiate aggressive random lunges & feints
-        if (!isTrackingActive) {
-          const timeSinceDash = now - lastDashTime;
-          const distToTarget = Math.hypot(huntTargetX - currentX, huntTargetY - currentY);
-          if (timeSinceDash > currentDashDuration || distToTarget < 30) {
-            pickAggressiveHuntTarget();
-          }
+        // Target is either cursor/finger position or autonomous roaming target
+        let targetX = isMouseActive ? mouseX : roamTargetX;
+        let targetY = isMouseActive ? mouseY : roamTargetY;
+
+        // When roaming freely, add smooth organic 3D wave motion
+        if (!isMouseActive) {
+          const t = (timestamp || 0) * 0.002;
+          targetX += Math.sin(t) * 20;
+          targetY += Math.cos(t * 0.8) * 16;
         }
 
-        let targetX = isTrackingActive ? pointerX : huntTargetX;
-        let targetY = isTrackingActive ? pointerY : huntTargetY;
+        // Fluid follow speed (fast & responsive to mouse, smooth & gentle when roaming)
+        const speed = isMouseActive ? 0.048 : 0.016;
+        currentX += (targetX - currentX) * speed;
+        currentY += (targetY - currentY) * speed;
 
-        // When in idle hunting mode, inject continuous predatory twitch and rapid organic cyber flutter
-        if (!isTrackingActive) {
-          const t = now * 0.007;
-          targetX += Math.sin(t * 2.2) * 26 + Math.cos(t * 4.6) * 14;
-          targetY += Math.cos(t * 1.8) * 22 + Math.sin(t * 3.8) * 12;
+        // If close to roaming target, pick the next destination across the screen
+        if (!isMouseActive && Math.hypot(roamTargetX - currentX, roamTargetY - currentY) < 45) {
+          pickNewRoamTarget();
         }
 
-        // Fast & aggressive pursuit lerp speed:
-        // 0.115 for ultra-fast snappy reaction to user cursor/finger!
-        // 0.082 for aggressive predatory dashes when idle/untracked!
-        const lerpFactor = isTrackingActive ? 0.115 : 0.082;
-        const dx = targetX - currentX;
-        const dy = targetY - currentY;
-        currentX += dx * lerpFactor;
-        currentY += dy * lerpFactor;
+        // Calculate travel relative to screen center
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
 
-        // Instantaneous physical velocity calculation
-        const vx = currentX - prevX;
-        const vy = currentY - prevY;
+        const halfW = (dragonContainer.offsetWidth || 240) / 2;
+        const halfH = (dragonContainer.offsetHeight || 240) / 2;
+        const maxMoveX = Math.max(10, centerX - halfW - 8);
+        const maxMoveY = Math.max(10, centerY - halfH - 8);
+
+        const moveX = Math.max(-maxMoveX, Math.min(maxMoveX, currentX - centerX));
+        const moveY = Math.max(-maxMoveY, Math.min(maxMoveY, currentY - centerY));
+
+        // 3D Space Rotation & Subtle Aerodynamic Banking
+        const nX = moveX / (maxMoveX || 1);
+        const nY = moveY / (maxMoveY || 1);
+        const maxTilt = 18;
+        const rotateX = nY * -maxTilt;
+        const rotateY = nX * maxTilt;
+        const bankZ = Math.max(-14, Math.min(14, (currentX - prevX) * 1.2));
         prevX = currentX;
-        prevY = currentY;
 
-        const speed = Math.hypot(vx, vy);
-
-        // Aggressive 3D Banking, Tilting, and Dynamic Lunge Scale
-        const bankZ = Math.max(-28, Math.min(28, vx * 2.8));
-        const tiltX = Math.max(-25, Math.min(25, -vy * 2.4));
-        const tiltY = Math.max(-25, Math.min(25, vx * 2.4));
-        const lungeScale = 0.95 + Math.min(0.18, speed * 0.022);
-
-        // Strict boundary calculation accounting for scale & banking to guarantee 0px overflow on all screens
-        const effectiveHalfW = ((dragonContainer.offsetWidth || 220) / 2) * 1.18;
-        const effectiveHalfH = ((dragonContainer.offsetHeight || 220) / 2) * 1.18;
-        const maxMoveX = Math.max(8, (window.innerWidth / 2) - effectiveHalfW - 12);
-        const maxMoveY = Math.max(8, (window.innerHeight / 2) - effectiveHalfH - 12);
-
-        const moveX = Math.max(-maxMoveX, Math.min(maxMoveX, currentX - window.innerWidth / 2));
-        const moveY = Math.max(-maxMoveY, Math.min(maxMoveY, currentY - window.innerHeight / 2));
-
-        dragonContainer.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0) rotateX(${tiltX.toFixed(1)}deg) rotateY(${tiltY.toFixed(1)}deg) rotateZ(${bankZ.toFixed(1)}deg) scale(${lungeScale.toFixed(2)})`;
+        dragonContainer.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0) rotateX(${rotateX.toFixed(1)}deg) rotateY(${rotateY.toFixed(1)}deg) rotateZ(${bankZ.toFixed(1)}deg)`;
       }
       requestAnimationFrame(animateDragon);
     }
